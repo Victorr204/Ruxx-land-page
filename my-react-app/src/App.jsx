@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import  '../src/style.css'
+import '../src/style.css';
 import img1 from './assets/images/img1.jpg';
 import img2 from './assets/images/img2.jpg';
 import img3 from './assets/images/img3.jpg';
 import img4 from './assets/images/img4.jpg';
 import img5 from './assets/images/img5.jpg';
 
-
-
 const images = [img1, img2, img3, img4, img5];
-
 
 const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -22,8 +19,6 @@ const App = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
-
 
   return (
     <div style={styles.container}>
@@ -45,14 +40,14 @@ const App = () => {
 
         <div style={styles.downloadLinks}>
           <a
-            href=  "https://play.google.com/store/apps/details?id=your.app.id"
+            href="https://play.google.com/store/apps/details?id=your.app.id"
             className="download-button"
             style={styles.button}
           >
             Download for Android
           </a>
           <a
-            href= "https://apps.apple.com/us/app/your-app-name/idyourappid"
+            href="https://apps.apple.com/us/app/your-app-name/idyourappid"
             className="download-button"
             style={styles.button}
           >
@@ -60,7 +55,6 @@ const App = () => {
           </a>
         </div>
         <br />
-
         <p style={styles.tagline}>Smarter Way to Pay — Anywhere, Anytime</p>
       </header>
 
@@ -81,6 +75,27 @@ const App = () => {
           Experience fast, secure, and seamless payments at your fingertips.
         </p>
       </section>
+
+      {/* Footer Section */}
+      <footer style={styles.footer}>
+  <p>© {new Date().getFullYear()} Ruxx. All rights reserved.</p>
+  <div style={styles.socialLinks}>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" style={styles.icon} />
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter" style={styles.icon} />
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram" style={styles.icon} />
+    </a>
+   <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+  <img src="https://cdn-icons-png.flaticon.com/24/5968/5968958.png" alt="X" style={styles.icon} />
+</a>
+
+  </div>
+</footer>
+
     </div>
   );
 };
@@ -136,7 +151,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     gap: '10px',
-    flexWrap: 'nowrap', // prevent stacking
+    flexWrap: 'nowrap',
     flexDirection: 'row',
   },
   button: {
@@ -153,6 +168,27 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  footer: {
+    marginTop: '50px',
+    borderTop: '1px solid #c8e6c9',
+    paddingTop: '20px',
+    fontSize: '0.9em',
+    color: '#2e7d32',
+  },
+  socialLinks: {
+    marginTop: '10px',
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '15px',
+  },
+  icon: {
+  width: '24px',
+  height: '24px',
+  transition: 'transform 0.2s',
+  cursor: 'pointer',
+ 
+},
+
 };
 
 export default App;
