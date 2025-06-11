@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import  '../src/style.css'
-import  '../src/assets/images/img1.jpg'
-import  '../src/assets/images/img2.jpg'
-import  '../src/assets/images/img3.jpg'
-import  '../src/assets/images/img4.jpg'
-import  '../src/assets/images/img5.jpg'
+import img1 from './assets/images/img1.jpg';
+import img2 from './assets/images/img2.jpg';
+import img3 from './assets/images/img3.jpg';
+import img4 from './assets/images/img4.jpg';
+import img5 from './assets/images/img5.jpg';
 
 
-const images = [
-'../src/assets/images/img1.jpg',
-'../src/assets/images/img2.jpg',
-'../src/assets/images/img3.jpg',
-'../src/assets/images/img4.jpg',
-'../src/assets/images/img5.jpg'
-];
+
+const images = [img1, img2, img3, img4, img5];
+
 
 const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
