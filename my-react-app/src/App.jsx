@@ -83,14 +83,17 @@ const App = () => {
     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
       <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" style={styles.icon} />
     </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter" style={styles.icon} />
-    </a>
+    
     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
       <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram" style={styles.icon} />
     </a>
+
    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
   <img src="https://cdn-icons-png.flaticon.com/24/5968/5968958.png" alt="X" style={styles.icon} />
+</a>
+
+<a href="mailto:support@ruxxapp.com" target="_blank" rel="noopener noreferrer">
+  <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Gmail" style={styles.icon} />
 </a>
 
   </div>
