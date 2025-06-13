@@ -37,6 +37,7 @@ const App = () => {
 
       <header style={styles.header}>
         <h1 style={styles.title}>Ruxx</h1>
+        <p>payment made easy</p>
 
         <div style={styles.downloadLinks}>
           <a
