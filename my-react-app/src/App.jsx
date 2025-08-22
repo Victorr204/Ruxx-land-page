@@ -11,16 +11,20 @@ import img2 from './assets/images/img2.jpg';
 import img3 from './assets/images/img3.jpg';
 import img4 from './assets/images/img4.jpg';
 import img5 from './assets/images/img5.jpg';
+import img6 from './assets/images/img6.jpg';
+import img7 from './assets/images/img7.jpg';
+import img8 from './assets/images/img8.jpg';
+import img9 from './assets/images/img9.jpg';
 import logo from './assets/logo.png';
 import banner from './assets/banner.png';
 
 
 
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const StarRow = ({ value = 0, onChange }) => {
   const [hover, setHover] = useState(0);
-  const stars = [1, 2, 3, 4, 5];
+  const stars = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className="star-row">
       {stars.map((s) => (
