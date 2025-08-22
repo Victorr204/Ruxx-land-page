@@ -169,7 +169,7 @@ export default function App() {
   <h2 className="section-title">Frequently Asked Questions</h2>
   <div className="faq-list">
     <details>
-      <summary>Is Ruxx safe to use?</summary>
+      <summary>Is Ruxx Digital Services safe to use?</summary>
       <p>Yes. We use bank-grade security and encrypted transactions to protect your data and money.</p>
     </details>
     <details>
@@ -182,7 +182,7 @@ export default function App() {
     </details>
     <details>
       <summary>Which devices are supported?</summary>
-      <p>You can use Ruxx on any Android or iOS device via our mobile app.</p>
+      <p>You can use Ruxx Digital Services on any Android or iOS device via our mobile app (ruxxpay) .</p>
     </details>
   </div>
 </section>
