@@ -24,7 +24,7 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const StarRow = ({ value = 0, onChange }) => {
   const [hover, setHover] = useState(0);
-  const stars = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const stars = [1, 2, 3, 4, 5,];
   return (
     <div className="star-row">
       {stars.map((s) => (
@@ -206,7 +206,7 @@ export default function App() {
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <Twitter size={20} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/ruxx_digital_services?igsh=MTU1a3Rhd2V4b3phag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <Instagram size={20} />
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
