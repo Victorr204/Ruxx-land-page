@@ -9,7 +9,7 @@ function StarRating({ rating, onRate, interactive = false }) {
   const [hover, setHover] = useState(0);
 
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-0.5" role={interactive ? "radiogroup" : "img"} aria-label={`Rating: ${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
@@ -21,6 +21,15 @@ function StarRating({ rating, onRate, interactive = false }) {
           onMouseEnter={() => interactive && setHover(i + 1)}
           onMouseLeave={() => interactive && setHover(0)}
           onClick={() => interactive && onRate(i + 1)}
+          role={interactive ? "radio" : undefined}
+          aria-checked={interactive ? i + 1 === rating : undefined}
+          tabIndex={interactive ? 0 : undefined}
+          onKeyDown={(e) => {
+            if (interactive && (e.key === "Enter" || e.key === " ")) {
+              e.preventDefault();
+              onRate(i + 1);
+            }
+          }}
         />
       ))}
     </div>
@@ -91,8 +100,8 @@ function ReviewForm({ onSubmitted }) {
         setForm({ author: "", rating: 5, text: "" });
         if (onSubmitted) onSubmitted();
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
+      // API not available
     }
     setSubmitting(false);
   };
@@ -116,8 +125,9 @@ function ReviewForm({ onSubmitted }) {
     <form onSubmit={handleSubmit} className="rounded-2xl p-6 border" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
       <h4 className="text-sm font-bold mb-4" style={{ color: "var(--foreground)" }}>Leave a Review</h4>
       <div className="mb-3">
-        <label className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Your Name</label>
+        <label htmlFor="review-name" className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Your Name</label>
         <input
+          id="review-name"
           type="text"
           required
           value={form.author}
@@ -128,12 +138,13 @@ function ReviewForm({ onSubmitted }) {
         />
       </div>
       <div className="mb-3">
-        <label className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Rating</label>
+        <label htmlFor="review-rating" className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Rating</label>
         <StarRating rating={form.rating} onRate={(r) => setForm({ ...form, rating: r })} interactive />
       </div>
       <div className="mb-4">
-        <label className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Your Review</label>
+        <label htmlFor="review-text" className="text-[11px] font-medium block mb-1" style={{ color: "var(--muted-foreground)" }}>Your Review</label>
         <textarea
+          id="review-text"
           required
           rows={3}
           value={form.text}
@@ -166,8 +177,8 @@ export default function Reviews() {
         const data = await res.json();
         setReviews(data.reviews || []);
       }
-    } catch (err) {
-      console.log("API not available");
+    } catch {
+      // API not available
     }
     setLoading(false);
   };

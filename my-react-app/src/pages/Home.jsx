@@ -460,12 +460,16 @@ export default function Home() {
                   <button
                     onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                     className="w-full flex items-center justify-between px-6 py-4 text-left"
+                    aria-expanded={faqOpen === i}
+                    aria-controls={`faq-answer-${i}`}
                   >
                     <span className="text-sm font-semibold text-foreground" style={{ paddingRight: "1rem" }}>{faq.q}</span>
                     <ChevronDown className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 ${faqOpen === i ? "rotate-180" : ""}`} />
                   </button>
                   {faqOpen === i && (
                     <div
+                      id={`faq-answer-${i}`}
+                      role="region"
                       className="px-6 pb-4 text-[13px] leading-relaxed border-t pt-3"
                       style={{ color: "var(--muted-foreground)", borderColor: "var(--border)" }}
                     >

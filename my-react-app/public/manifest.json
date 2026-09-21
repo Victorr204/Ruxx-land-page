@@ -1,0 +1,16 @@
+{
+  "name": "Ruxx Digital Services",
+  "short_name": "Ruxx",
+  "description": "Smarter payments for everyday life. Airtime, data, TV, electricity, betting, and gift card trading.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7C3AED",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

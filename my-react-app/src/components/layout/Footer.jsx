@@ -67,6 +67,7 @@ export default function Footer() {
         <div className="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left" style={{ borderColor: "var(--border)" }}>
           <p className="text-[12px] text-muted-foreground">&copy; {year} Ruxx Digital Services.</p>
           <p className="text-[11px] text-muted-foreground/60">A subsidiary of <span className="text-gold font-medium">Kognatix Ltd</span></p>
+          <p className="text-[10px] text-muted-foreground/40">This site may contain third-party advertisements.</p>
         </div>
       </div>
     </footer>

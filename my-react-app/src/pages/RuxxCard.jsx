@@ -142,12 +142,12 @@ export default function RuxxCard() {
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} custom={i}>
                 <div className="rounded-xl border overflow-hidden" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
-                  <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left">
+                   <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={faqOpen === i} aria-controls={`ruxxcard-faq-${i}`}>
                     <span className="text-sm font-semibold text-foreground pr-4">{faq.q}</span>
                     <ChevronDown className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform ${faqOpen === i ? "rotate-180" : ""}`} />
                   </button>
                   {faqOpen === i && (
-                    <div className="px-6 pb-4 text-[13px] text-muted-foreground leading-relaxed border-t pt-3" style={{ borderColor: "var(--border)" }}>
+                    <div id={`ruxxcard-faq-${i}`} role="region" className="px-6 pb-4 text-[13px] text-muted-foreground leading-relaxed border-t pt-3" style={{ borderColor: "var(--border)" }}>
                       {faq.a}
                     </div>
                   )}

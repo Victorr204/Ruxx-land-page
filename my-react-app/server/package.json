@@ -1,0 +1,15 @@
+{
+  "name": "ruxx-backend",
+  "version": "1.0.0",
+  "description": "Ruxx Digital Services API server",
+  "main": "index.cjs",
+  "scripts": {
+    "start": "node index.cjs",
+    "dev": "node --watch index.cjs"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.34.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}

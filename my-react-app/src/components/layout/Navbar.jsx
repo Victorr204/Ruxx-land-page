@@ -32,24 +32,25 @@ export default function Navbar() {
       <header
         className="fixed z-50 transition-all duration-300"
         style={{
-          top: scrolled ? "0.75rem" : "0.75rem",
+          top: "0.75rem",
           left: "1rem",
           right: "1rem",
           maxWidth: "80rem",
           marginLeft: "auto",
           marginRight: "auto",
-          backgroundColor: scrolled ? "var(--nav-bg)" : "rgba(250,250,250,0.7)",
+          backgroundColor: "var(--nav-bg)",
           border: scrolled ? "3px solid var(--primary)" : "3px solid var(--border)",
           borderRadius: "1rem",
           backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
         }}
       >
         <div style={{ maxWidth: "80rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "4.5rem" }}>
             {/* Logo */}
-            <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.625rem", flexShrink: 0 }}>
+            <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
               <img src={logo} alt="Ruxx" style={{ height: "2.5rem", width: "auto", borderRadius: "0.5rem" }} />
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1, gap: "2px" }}>
                 <span className="font-black text-foreground" style={{ fontSize: "1.1rem", letterSpacing: "-0.025em" }}>Ruxx</span>
                 <span className="text-gold font-bold" style={{ fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase" }}>Digital Services</span>
               </div>
@@ -94,18 +95,19 @@ export default function Navbar() {
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
 
-              <a
-                href="#download"
+              <Link
+                to="/ruxxpay"
                 className="hidden lg:inline-flex items-center bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
                 style={{ gap: "0.375rem", padding: "0.5rem 1.25rem", fontSize: "13px" }}
               >
                 Get App <ArrowRight style={{ width: "14px", height: "14px" }} />
-              </a>
+              </Link>
 
               <button
                 className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:bg-muted transition-colors"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
+                aria-expanded={menuOpen}
               >
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -124,7 +126,7 @@ export default function Navbar() {
             transition={{ duration: 0.15 }}
             className="fixed z-40 lg:hidden"
             style={{
-              top: "4.5rem",
+              top: "5rem",
               left: "1rem",
               right: "1rem",
               backgroundColor: "var(--card)",
@@ -154,13 +156,13 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <a
-                href="#download"
+              <Link
+                to="/ruxxpay"
                 className="mt-2 flex items-center justify-center bg-primary text-primary-foreground rounded-lg font-semibold"
                 style={{ gap: "0.375rem", padding: "0.625rem 1.25rem", fontSize: "14px" }}
               >
                 Get App <ArrowRight style={{ width: "16px", height: "16px" }} />
-              </a>
+              </Link>
             </nav>
           </motion.div>
         )}

@@ -140,12 +140,12 @@ export default function RuxxPay() {
                 <div style={{ display: "flex" }}>
                   {images.map((src, idx) => (
                     <div key={idx} style={{ flex: "0 0 100%", minWidth: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "var(--card-bg)" }}>
-                      <img src={src} alt={`RuxxPay showcase ${idx + 1}`} style={{ width: "100%", height: "60vh", minHeight: "300px", maxHeight: "600px", objectFit: "contain" }} />
+                      <img src={src} alt={`RuxxPay showcase ${idx + 1}`} loading="lazy" decoding="async" style={{ width: "100%", height: "60vh", minHeight: "300px", maxHeight: "600px", objectFit: "contain" }} />
                     </div>
                   ))}
                 </div>
               </div>
-              <button onClick={scrollPrev}
+              <button onClick={scrollPrev} aria-label="Previous image"
                 className="hidden sm:flex"
                 style={{ position: "absolute", left: "0.75rem", top: "50%", transform: "translateY(-50%)", width: "2.5rem", height: "2.5rem", borderRadius: "50%", alignItems: "center", justifyContent: "center", border: "1px solid var(--card-border)", background: "var(--card-bg)", color: "var(--foreground)", backdropFilter: "blur(8px)", cursor: "pointer", transition: "all 0.2s" }}
                 onMouseOver={(e) => e.currentTarget.style.background = "rgba(124,58,237,0.2)"}
@@ -153,7 +153,7 @@ export default function RuxxPay() {
               >
                 <ChevronLeft style={{ width: "1.25rem", height: "1.25rem" }} />
               </button>
-              <button onClick={scrollNext}
+              <button onClick={scrollNext} aria-label="Next image"
                 className="hidden sm:flex"
                 style={{ position: "absolute", right: "0.75rem", top: "50%", transform: "translateY(-50%)", width: "2.5rem", height: "2.5rem", borderRadius: "50%", alignItems: "center", justifyContent: "center", border: "1px solid var(--card-border)", background: "var(--card-bg)", color: "var(--foreground)", backdropFilter: "blur(8px)", cursor: "pointer", transition: "all 0.2s" }}
                 onMouseOver={(e) => e.currentTarget.style.background = "rgba(124,58,237,0.2)"}
@@ -213,12 +213,12 @@ export default function RuxxPay() {
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} custom={i} style={{ marginBottom: "0.5rem" }}>
                 <div className="rounded-xl border overflow-hidden" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
-                  <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left">
+                   <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={faqOpen === i} aria-controls={`ruxxpay-faq-${i}`}>
                     <span className="text-sm font-semibold text-foreground" style={{ paddingRight: "1rem" }}>{faq.q}</span>
                     <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform ${faqOpen === i ? "rotate-180" : ""}`} style={{ flexShrink: 0 }} />
                   </button>
                   {faqOpen === i && (
-                    <div className="px-6 pb-4 text-[13px] text-muted-foreground border-t pt-3" style={{ lineHeight: 1.6, borderColor: "var(--border)" }}>
+                    <div id={`ruxxpay-faq-${i}`} role="region" className="px-6 pb-4 text-[13px] text-muted-foreground border-t pt-3" style={{ lineHeight: 1.6, borderColor: "var(--border)" }}>
                       {faq.a}
                     </div>
                   )}
