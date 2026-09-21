@@ -6,9 +6,17 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const ADMIN_KEY = process.env.ADMIN_KEY || "ruxx-admin-key-change-in-production";
 
+function cleanEnv(v) {
+  if (!v) return v;
+  return v.replace(/^["']|["']$/g, "").trim();
+}
+
+const redisUrl = cleanEnv(process.env.UPSTASH_REDIS_REST_URL);
+const redisToken = cleanEnv(process.env.UPSTASH_REDIS_REST_TOKEN);
+
 const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  url: redisUrl,
+  token: redisToken,
 });
 
 app.use(cors());

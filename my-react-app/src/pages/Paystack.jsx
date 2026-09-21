@@ -18,7 +18,7 @@ export default function Paystack() {
     <motion.div initial="hidden" animate="visible" variants={stagger}>
 
       {/* HERO */}
-      <section className="relative overflow-hidden pt-24 pb-6 md:pt-32 md:pb-8">
+      <section className="relative overflow-hidden pt-32 pb-10 md:pt-40 md:pb-16">
         <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: 0.6 }} />
         <div style={{ position: "absolute", inset: 0, background: "var(--hero-gradient)" }} />
 

@@ -52,7 +52,7 @@ export default function RuxxPay() {
   return (
     <motion.div initial="hidden" animate="visible" variants={stagger}>
       {/* HERO */}
-      <section className="relative pt-24 pb-10 md:pt-32 md:pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: 1 }} />
         <div style={{ position: "absolute", inset: 0, background: "var(--hero-gradient)", transition: "background 0.3s" }} />
         <div style={{ maxWidth: "80rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem", position: "relative", zIndex: 10, textAlign: "center" }}>
