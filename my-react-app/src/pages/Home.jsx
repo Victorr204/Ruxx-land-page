@@ -59,7 +59,7 @@ export default function Home() {
     <motion.div initial="hidden" animate="visible" variants={stagger}>
 
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section className="relative overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20">
         {/* Floating orbs */}
         <div style={{ position: "absolute", top: "10%", left: "-5%", width: "300px", height: "300px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: "5%", right: "-8%", width: "350px", height: "350px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />

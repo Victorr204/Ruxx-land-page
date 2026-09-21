@@ -52,7 +52,7 @@ export default function RuxxPay() {
   return (
     <motion.div initial="hidden" animate="visible" variants={stagger}>
       {/* HERO */}
-      <section className="relative pt-20 pb-10 md:pt-32 md:pb-16 overflow-hidden">
+      <section className="relative pt-24 pb-10 md:pt-32 md:pb-16 overflow-hidden">
         <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: 1 }} />
         <div style={{ position: "absolute", inset: 0, background: "var(--hero-gradient)", transition: "background 0.3s" }} />
         <div style={{ maxWidth: "80rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem", position: "relative", zIndex: 10, textAlign: "center" }}>
@@ -80,7 +80,7 @@ export default function RuxxPay() {
       </section>
 
       {/* SERVICES */}
-      <section style={{ padding: "3rem 0" }}>
+      <section className="py-12 md:py-20 lg:py-28">
         <div style={{ maxWidth: "72rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem" }}>
           <motion.div variants={fadeUp} style={{ textAlign: "center", marginBottom: "3rem" }}>
             <h2 className="text-3xl md:text-4xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
@@ -102,7 +102,7 @@ export default function RuxxPay() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ padding: "3rem 0", background: "var(--section-alt)" }}>
+      <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
         <div style={{ maxWidth: "64rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem" }}>
           <motion.div variants={fadeUp} style={{ textAlign: "center", marginBottom: "3rem" }}>
             <h2 className="text-3xl md:text-4xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
@@ -167,7 +167,7 @@ export default function RuxxPay() {
       </section>
 
       {/* SECURITY */}
-      <section style={{ padding: "3rem 0", background: "var(--section-alt)" }}>
+      <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
         <div style={{ maxWidth: "72rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem" }}>
           <div className="grid lg:grid-cols-2" style={{ gap: "1.5rem", alignItems: "center", maxWidth: "64rem", marginLeft: "auto", marginRight: "auto" }}>
             <motion.div variants={fadeUp}>
@@ -201,7 +201,7 @@ export default function RuxxPay() {
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: "3rem 0" }}>
+      <section className="py-12 md:py-20 lg:py-28">
         <div style={{ maxWidth: "48rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem" }}>
           <motion.div variants={fadeUp} style={{ textAlign: "center", marginBottom: "2.5rem" }}>
             <h2 className="text-3xl md:text-4xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>FAQ</h2>
@@ -230,7 +230,7 @@ export default function RuxxPay() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "3rem 0", background: "var(--section-alt)" }}>
+      <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
         <div style={{ maxWidth: "48rem", marginLeft: "auto", marginRight: "auto", paddingLeft: "1rem", paddingRight: "1rem", textAlign: "center" }}>
           <motion.div variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground" style={{ letterSpacing: "-0.025em", lineHeight: 1.15 }}>

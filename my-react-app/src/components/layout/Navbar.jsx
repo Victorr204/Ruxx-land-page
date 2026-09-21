@@ -32,7 +32,7 @@ export default function Navbar() {
       <header
         className="fixed z-50 transition-all duration-300"
         style={{
-          top: "0.75rem",
+          top: "1rem",
           left: "1rem",
           right: "1rem",
           maxWidth: "80rem",
@@ -126,7 +126,7 @@ export default function Navbar() {
             transition={{ duration: 0.15 }}
             className="fixed z-40 lg:hidden"
             style={{
-              top: "5rem",
+              top: "5.25rem",
               left: "1rem",
               right: "1rem",
               backgroundColor: "var(--card)",
