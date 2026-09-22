@@ -12,6 +12,7 @@ import paystackLogo from "@/assets/images/paystack.png";
 import paystackSvg from "@/assets/images/paystack-logo.svg";
 
 const STATS_API = import.meta.env.VITE_STATS_API_URL;
+const API_BASE = STATS_API ? STATS_API.replace("/api/stats", "") : "";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -48,8 +49,8 @@ export default function Home() {
   const [stats, setStats] = useState({ users: 0, uptime: 0 });
 
   useEffect(() => {
-    if (!STATS_API) return;
-    fetch(STATS_API)
+    if (!API_BASE) return;
+    fetch(`${API_BASE}/api/track-visit`, { method: "POST" })
       .then((r) => r.json())
       .then((data) => setStats({ users: data.users || 0, uptime: data.uptime || 99.9 }))
       .catch(() => {});
@@ -57,6 +58,18 @@ export default function Home() {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={stagger}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map(faq => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.a
+          }
+        }))
+      }) }} />
 
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
@@ -135,7 +148,7 @@ export default function Home() {
 
       {/* ═══════════════════ MARQUEE ═══════════════════ */}
       <section className="py-3 md:py-4" style={{ overflow: "hidden", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", background: "var(--section-alt)" }}>
-        <div style={{ display: "flex", width: "max-content", animation: "marquee 25s linear infinite" }}>
+        <div aria-hidden="true" style={{ display: "flex", width: "max-content", animation: "marquee 25s linear infinite" }}>
           {marquee.map((item, i) => (
             <div key={i} className="flex items-center text-sm font-medium text-muted-foreground" style={{ gap: "0.5rem", padding: "0 2rem", whiteSpace: "nowrap" }}>
               <span style={{ color: "var(--primary)" }}>{item.icon}</span>
@@ -182,14 +195,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-5 md:p-6">
             {/* RuxxPay */}
             <motion.div variants={fadeUp}>
-              <Link to="/ruxxpay" className="block rounded-3xl p-5 md:p-8 lg:p-10 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(124,58,237,0.3)"}
-                onMouseOut={(e) => e.currentTarget.style.borderColor = "var(--card-border)"}
-              >
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "rgba(124,58,237,0.1)", marginBottom: "1.5rem" }}>
+              <Link to="/ruxxpay" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: "rgba(124,58,237,0.1)" }}>
                   <Smartphone className="w-7 h-7 text-primary" />
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full" style={{ padding: "0.25rem 0.625rem", marginBottom: "1rem", background: "rgba(124,58,237,0.08)" }}>
+                <div className="inline-flex items-center gap-2 rounded-full mb-4" style={{ padding: "0.25rem 0.625rem", background: "rgba(124,58,237,0.08)" }}>
                   <span className="text-[10px] font-semibold text-primary tracking-wide">RuxxPay</span>
                 </div>
                 <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Your wallet, supercharged.</h3>
@@ -209,14 +219,11 @@ export default function Home() {
 
             {/* Ruxx Card */}
             <motion.div variants={fadeUp} custom={1}>
-              <Link to="/ruxx-card" className="block rounded-3xl p-5 md:p-8 lg:p-10 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(245,158,11,0.3)"}
-                onMouseOut={(e) => e.currentTarget.style.borderColor = "var(--card-border)"}
-              >
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "rgba(245,158,11,0.1)", marginBottom: "1.5rem" }}>
+              <Link to="/ruxx-card" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: "rgba(245,158,11,0.1)" }}>
                   <CreditCard className="w-7 h-7 text-gold" />
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full" style={{ padding: "0.25rem 0.625rem", marginBottom: "1rem", background: "rgba(245,158,11,0.08)" }}>
+                <div className="inline-flex items-center gap-2 rounded-full mb-4" style={{ padding: "0.25rem 0.625rem", background: "rgba(245,158,11,0.08)" }}>
                   <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Card</span>
                 </div>
                 <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Trade gift cards at the best rates.</h3>
@@ -342,10 +349,8 @@ export default function Home() {
             ].map((f, i) => (
               <motion.div
                 key={i} variants={fadeUp} custom={i}
-                className="rounded-2xl p-5 md:p-6 border transition-all"
+                className="rounded-2xl p-5 md:p-6 border card-hover"
                 style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                onMouseOver={(e) => { e.currentTarget.style.borderColor = "rgba(124,58,237,0.2)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseOut={(e) => { e.currentTarget.style.borderColor = "var(--card-border)"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: f.color, color: f.iconColor }}>{f.icon}</div>
                 <h3 className="font-bold text-foreground text-sm mb-1.5">{f.title}</h3>
@@ -484,10 +489,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <motion.div variants={fadeUp}>
-            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "min(400px, 80vw)", height: "min(400px, 80vw)", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground" style={{ letterSpacing: "-0.03em", lineHeight: 1.15, position: "relative" }}>
               Ready to start<br />
               <span className="gradient-text">paying smarter?</span>

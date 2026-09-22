@@ -132,7 +132,7 @@ function ReviewForm({ onSubmitted }) {
           required
           value={form.author}
           onChange={(e) => setForm({ ...form, author: e.target.value })}
-          className="w-full rounded-lg px-3 py-2 text-[13px] border outline-none"
+          className="w-full rounded-lg px-3 py-2 text-[13px] border outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           style={{ background: "var(--background)", borderColor: "var(--border)", color: "var(--foreground)" }}
           placeholder="Enter your name"
         />
@@ -149,7 +149,7 @@ function ReviewForm({ onSubmitted }) {
           rows={3}
           value={form.text}
           onChange={(e) => setForm({ ...form, text: e.target.value })}
-          className="w-full rounded-lg px-3 py-2 text-[13px] border outline-none resize-none"
+          className="w-full rounded-lg px-3 py-2 text-[13px] border outline-none resize-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
           style={{ background: "var(--background)", borderColor: "var(--border)", color: "var(--foreground)" }}
           placeholder="Tell us about your experience..."
         />

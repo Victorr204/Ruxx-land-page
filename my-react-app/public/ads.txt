@@ -1,0 +1,2 @@
+# Ads.txt for ruxxdigital.name.ng
+google.com, pub-9942550938838021, DIRECT, f08c47fec0942fa0

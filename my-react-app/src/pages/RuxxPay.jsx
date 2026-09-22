@@ -28,11 +28,13 @@ export default function RuxxPay() {
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
+  const [paused, setPaused] = useState(false);
+
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || paused) return;
     const timer = setInterval(() => emblaApi.scrollNext(), 4000);
     return () => clearInterval(timer);
-  }, [emblaApi]);
+  }, [emblaApi, paused]);
 
   const services = [
     { icon: <Wifi className="w-5 h-5" />, title: "Airtime & Data", desc: "Top up all networks — MTN, Airtel, Glo, 9Mobile. Instant delivery, best rates." },
@@ -51,6 +53,18 @@ export default function RuxxPay() {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={stagger}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map(faq => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.a
+          }
+        }))
+      }) }} />
       {/* HERO */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: 1 }} />
@@ -135,12 +149,17 @@ export default function RuxxPay() {
             </h2>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <div style={{ position: "relative" }}>
+            <div style={{ position: "relative" }}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onFocus={() => setPaused(true)}
+              onBlur={() => setPaused(false)}
+            >
               <div ref={emblaRef} style={{ overflow: "hidden", borderRadius: "1rem", border: "1px solid var(--card-border)" }}>
                 <div style={{ display: "flex" }}>
                   {images.map((src, idx) => (
                     <div key={idx} style={{ flex: "0 0 100%", minWidth: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "var(--card-bg)" }}>
-                      <img src={src} alt={`RuxxPay showcase ${idx + 1}`} loading="lazy" decoding="async" style={{ width: "100%", height: "60vh", minHeight: "300px", maxHeight: "600px", objectFit: "contain" }} />
+                      <img src={src} alt={`RuxxPay showcase ${idx + 1}`} width="1080" height="2400" loading="lazy" decoding="async" style={{ width: "100%", height: "auto", minHeight: "200px", maxHeight: "60vh", objectFit: "contain" }} />
                     </div>
                   ))}
                 </div>

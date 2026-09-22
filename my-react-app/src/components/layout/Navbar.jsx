@@ -3,12 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/lib/theme";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/icon.svg";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/ruxxpay", label: "RuxxPay" },
   { to: "/ruxx-card", label: "Ruxx Card" },
+  { to: "/blog", label: "Blog" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
@@ -26,6 +27,13 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => { setMenuOpen(false); }, [location]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e) => { if (e.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
 
   return (
     <>
@@ -64,6 +72,7 @@ export default function Navbar() {
                   <Link
                     key={link.to}
                     to={link.to}
+                    aria-current={active ? "page" : undefined}
                     className={`relative rounded-lg text-sm font-medium transition-all duration-200 ${
                       active ? "text-primary" : "text-muted-foreground hover:text-foreground"
                     }`}
@@ -108,6 +117,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
                 aria-expanded={menuOpen}
+                aria-controls="mobile-menu"
               >
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -124,6 +134,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
+            id="mobile-menu"
             className="fixed z-40 lg:hidden"
             style={{
               top: "5.25rem",
@@ -144,6 +155,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.to}
+                    aria-current={location.pathname === link.to ? "page" : undefined}
                     className="block rounded-lg font-medium transition-colors"
                     style={{
                       padding: "0.625rem 1rem",

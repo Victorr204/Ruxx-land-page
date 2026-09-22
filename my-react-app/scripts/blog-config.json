@@ -1,0 +1,45 @@
+{
+  "ai": {
+    "provider": "openrouter",
+    "apiKey": "",
+    "model": "mistralai/mistral-7b-instruct:free",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "blog": {
+    "outputFile": "src/lib/articles.js",
+    "siteName": "Ruxx Digital Services",
+    "siteUrl": "https://ruxxdigital.name.ng",
+    "author": "Ruxx Team"
+  },
+  "research": {
+    "maxTopics": 5,
+    "sources": [
+      "https://techcabal.com",
+      "https://nairametrics.com",
+      "https://techpoint.africa",
+      "https://pulse.ng/business"
+    ]
+  },
+  "article": {
+    "minWords": 1200,
+    "maxWords": 2000,
+    "categories": ["Payments", "Fintech", "Gift Cards", "Technology", "Business"],
+    "topics": [
+      "bill payments Nigeria",
+      "mobile money Africa",
+      "gift card trading Nigeria",
+      "fintech startups Africa",
+      "digital payments trends",
+      "cryptocurrency Nigeria",
+      "online security tips",
+      "financial literacy",
+      "airtime data bundles",
+      "electricity bill payment",
+      "DStv subscription Nigeria",
+      "betting wallet funding",
+      "Paystack payment gateway",
+      "USSD banking Nigeria",
+      "POS business Nigeria"
+    ]
+  }
+}

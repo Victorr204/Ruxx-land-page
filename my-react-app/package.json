@@ -8,7 +8,14 @@
     "server": "node server/index.cjs",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "blog": "node scripts/ai-blog.mjs",
+    "blog:interactive": "node scripts/ai-blog.mjs --interactive",
+    "blog:topics": "node scripts/ai-blog.mjs --list-topics",
+    "blog:daily": "node scripts/daily-blog.mjs",
+    "blog:schedule": "node scripts/daily-blog.mjs --schedule",
+    "blog:schedule:remove": "node scripts/daily-blog.mjs --remove",
+    "blog:schedule:status": "node scripts/daily-blog.mjs --status"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -25,6 +32,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.11.0",
+    "sharp": "^0.35.4",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^2.1.0",
     "tailwindcss-animate": "^1.0.7"
@@ -37,6 +45,7 @@
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.25.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",

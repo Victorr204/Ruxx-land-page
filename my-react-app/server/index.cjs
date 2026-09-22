@@ -1,14 +1,20 @@
 const express = require("express");
 const cors = require("cors");
+const crypto = require("crypto");
 const { Redis } = require("@upstash/redis");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const ADMIN_KEY = process.env.ADMIN_KEY || "ruxx-admin-key-change-in-production";
 
 function cleanEnv(v) {
   if (!v) return v;
   return v.replace(/^["']|["']$/g, "").trim();
+}
+
+const ADMIN_KEY = cleanEnv(process.env.ADMIN_KEY);
+if (!ADMIN_KEY || ADMIN_KEY.length < 16) {
+  console.error("ADMIN_KEY environment variable is required (min 16 characters). Refusing to start.");
+  process.exit(1);
 }
 
 const redisUrl = cleanEnv(process.env.UPSTASH_REDIS_REST_URL);
@@ -21,6 +27,7 @@ const redis = new Redis({
 
 app.use(cors());
 app.use(express.json());
+app.set("trust proxy", 1);
 
 // Rate limiting
 const RATE_LIMIT_WINDOW = 60;
@@ -37,7 +44,13 @@ async function checkRateLimit(ip) {
 
 function requireAdmin(req, res, next) {
   const key = req.headers["x-admin-key"];
-  if (key !== ADMIN_KEY) {
+  if (!key || typeof key !== "string" || !ADMIN_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  const a = Buffer.from(key);
+  const b = Buffer.from(ADMIN_KEY);
+  const mismatch = a.length !== b.length || !crypto.timingSafeEqual(a, b);
+  if (mismatch) {
     return res.status(401).json({ error: "Unauthorized" });
   }
   next();
@@ -46,9 +59,38 @@ function requireAdmin(req, res, next) {
 // Stats
 app.get("/api/stats", async (req, res) => {
   try {
-    const users = (await redis.get("stats:users")) || 0;
+    const seed = (await redis.get("stats:seed")) || 0;
+    const visitors = await redis.scard("visitor:ips");
     const uptime = (await redis.get("stats:uptime")) || "99.9";
-    res.json({ users: parseInt(users), uptime: parseFloat(uptime) });
+    res.json({ users: visitors + parseInt(seed), uptime: parseFloat(uptime) });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Track unique visitor
+app.post("/api/track-visit", async (req, res) => {
+  try {
+    const ip = req.headers["x-forwarded-for"]?.split(",")[0]?.trim() || req.ip || "unknown";
+    const hash = crypto.createHash("sha256").update(ip).digest("hex");
+    await redis.sadd("visitor:ips", hash);
+    const seed = (await redis.get("stats:seed")) || 0;
+    const visitors = await redis.scard("visitor:ips");
+    const uptime = (await redis.get("stats:uptime")) || "99.9";
+    res.json({ success: true, users: visitors + parseInt(seed), uptime: parseFloat(uptime) });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Admin: set stats seed (app downloads base number)
+app.post("/api/stats/set", requireAdmin, async (req, res) => {
+  const { seed } = req.body;
+  if (seed === undefined || seed === null) return res.status(400).json({ error: "Seed number required" });
+  try {
+    await redis.set("stats:seed", parseInt(seed));
+    const visitors = await redis.scard("visitor:ips");
+    res.json({ success: true, users: visitors + parseInt(seed) });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

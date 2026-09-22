@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Instagram } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/icon.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -11,13 +11,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t" style={{ borderColor: "var(--border)" }}>
+    <footer className="border-t" style={{ borderColor: "var(--border)", background: "var(--section-alt)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8 mb-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-4 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 mb-3">
-              <img src={logo} alt="Ruxx" className="h-8 w-auto rounded-lg" />
+            <Link to="/" className="flex items-center gap-2.5 mb-3 group">
+              <img src={logo} alt="Ruxx" className="h-8 w-auto rounded-lg transition-transform group-hover:scale-105" />
               <div className="flex flex-col leading-none">
                 <span className="font-bold text-sm text-foreground tracking-tight">Ruxx</span>
                 <span className="text-[8px] text-gold font-semibold tracking-[0.15em] uppercase">Digital Services</span>
@@ -32,7 +32,7 @@ export default function Footer() {
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-lg border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all"
+                  className="w-8 h-8 rounded-lg border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 btn-press transition-all"
                   style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
                   {s.icon}
                 </a>
@@ -43,23 +43,25 @@ export default function Footer() {
           {/* Links */}
           <div>
             <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">Products</h4>
-            <ul className="space-y-2">
-              <li><Link to="/ruxxpay" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">RuxxPay</Link></li>
-              <li><Link to="/ruxx-card" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">Ruxx Card</Link></li>
+            <ul className="space-y-2.5">
+              <li><Link to="/ruxxpay" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">RuxxPay</Link></li>
+              <li><Link to="/ruxx-card" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Card</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">Company</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-              <li><Link to="/contact" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
+            <ul className="space-y-2.5">
+              <li><Link to="/about" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">About</Link></li>
+              <li><Link to="/contact" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link to="/paystack" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Security</Link></li>
+              <li><Link to="/blog" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">Legal</h4>
-            <ul className="space-y-2">
-              <li><Link to="/terms" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">Terms</Link></li>
-              <li><Link to="/privacy" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">Privacy</Link></li>
+            <ul className="space-y-2.5">
+              <li><Link to="/terms" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Terms</Link></li>
+              <li><Link to="/privacy" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
         </div>
@@ -67,7 +69,7 @@ export default function Footer() {
         <div className="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left" style={{ borderColor: "var(--border)" }}>
           <p className="text-[12px] text-muted-foreground">&copy; {year} Ruxx Digital Services.</p>
           <p className="text-[11px] text-muted-foreground/60">A subsidiary of <span className="text-gold font-medium">Kognatix Ltd</span></p>
-          <p className="text-[10px] text-muted-foreground/40">This site may contain third-party advertisements.</p>
+          <p className="text-[12px] text-muted-foreground/60">This site may contain third-party advertisements.</p>
         </div>
       </div>
     </footer>

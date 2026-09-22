@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruxx Digital Services Blog</title>
+    <link>https://ruxxdigital.name.ng/blog</link>
+    <description>Guides and insights on digital payments, bill payments, and gift card trading in Nigeria.</description>
+    <language>en-ng</language>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://ruxxdigital.name.ng/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How to Pay Bills Online in Nigeria: A Complete Guide</title>
+      <link>https://ruxxdigital.name.ng/blog/how-to-pay-bills-online-in-nigeria</link>
+      <guid>https://ruxxdigital.name.ng/blog/how-to-pay-bills-online-in-nigeria</guid>
+      <description>Learn how to pay for airtime, data, TV subscriptions, and electricity bills online from your phone in Nigeria.</description>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0100</pubDate>
+      <category>Payments</category>
+    </item>
+    <item>
+      <title>Finding the Best Gift Card Trading Rates in Nigeria</title>
+      <link>https://ruxxdigital.name.ng/blog/best-gift-card-trading-rates-nigeria</link>
+      <guid>https://ruxxdigital.name.ng/blog/best-gift-card-trading-rates-nigeria</guid>
+      <description>A guide to understanding gift card rates, when to sell, and how to get the best value for your gift cards in Nigeria.</description>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0100</pubDate>
+      <category>Gift Cards</category>
+    </item>
+    <item>
+      <title>Understanding Virtual Accounts: The Future of Banking in Nigeria</title>
+      <link>https://ruxxdigital.name.ng/blog/understanding-virtual-accounts-nigeria</link>
+      <guid>https://ruxxdigital.name.ng/blog/understanding-virtual-accounts-nigeria</guid>
+      <description>What are virtual accounts, how do they work, and why are they becoming essential for digital payments in Nigeria?</description>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0100</pubDate>
+      <category>Fintech</category>
+    </item>
+    <item>
+      <title>10 Essential Mobile Payment Security Tips for Nigerians</title>
+      <link>https://ruxxdigital.name.ng/blog/mobile-payment-security-tips</link>
+      <guid>https://ruxxdigital.name.ng/blog/mobile-payment-security-tips</guid>
+      <description>Protect your money and personal information with these practical security tips for mobile payment apps.</description>
+      <pubDate>Thu, 28 Aug 2026 00:00:00 +0100</pubDate>
+      <category>Technology</category>
+    </item>
+    <item>
+      <title>How Digital Payments Are Transforming Nigeria's Economy</title>
+      <link>https://ruxxdigital.name.ng/blog/digital-payments-transforming-nigeria-economy</link>
+      <guid>https://ruxxdigital.name.ng/blog/digital-payments-transforming-nigeria-economy</guid>
+      <description>From POS terminals to mobile wallets, discover how digital payment solutions are driving financial inclusion across Nigeria.</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0100</pubDate>
+      <category>Fintech</category>
+    </item>
+    <item>
+      <title>Complete Guide to Prepaid Meter Token Purchase in Nigeria</title>
+      <link>https://ruxxdigital.name.ng/blog/electricity-bill-payment-guide-nigeria</link>
+      <guid>https://ruxxdigital.name.ng/blog/electricity-bill-payment-guide-nigeria</guid>
+      <description>Step-by-step instructions for buying electricity tokens for all Nigerian distribution companies (DisCos).</description>
+      <pubDate>Thu, 12 Aug 2026 00:00:00 +0100</pubDate>
+      <category>Payments</category>
+    </item>
+  </channel>
+</rss>

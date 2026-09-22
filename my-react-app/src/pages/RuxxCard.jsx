@@ -21,6 +21,18 @@ export default function RuxxCard() {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={stagger}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map(faq => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.a
+          }
+        }))
+      }) }} />
       {/* HERO */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-100" />

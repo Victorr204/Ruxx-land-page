@@ -16,6 +16,8 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Paystack = lazy(() => import("@/pages/Paystack"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function PageLoader() {
@@ -50,6 +52,8 @@ export default function App() {
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/paystack" element={<Paystack />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </AnimatePresence>

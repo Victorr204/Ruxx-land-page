@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, ShieldCheck, Zap, Award, Users, TrendingUp } from "lucide-react";
+import { Target, Eye, Heart, ShieldCheck, Zap, Award, Users, TrendingUp, User } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 const STATS_API = import.meta.env.VITE_STATS_API_URL;
+const API_BASE = STATS_API ? STATS_API.replace("/api/stats", "") : "";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,8 +16,8 @@ export default function About() {
   const [stats, setStats] = useState({ users: 0 });
 
   useEffect(() => {
-    if (!STATS_API) return;
-    fetch(STATS_API)
+    if (!API_BASE) return;
+    fetch(`${API_BASE}/api/track-visit`, { method: "POST" })
       .then((r) => r.json())
       .then((data) => setStats({ users: data.users || 0 }))
       .catch(() => {});
@@ -83,23 +84,50 @@ export default function About() {
         </div>
       </section>
 
-      {/* PARENT COMPANY */}
+      {/* FOUNDER + PARENT COMPANY */}
       <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div variants={fadeUp}>
-            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3.5 py-1.5 mb-6 border border-primary/20">
-              <Users className="w-3.5 h-3.5 text-primary" />
-              <span className="text-[11px] font-semibold text-primary tracking-wide">Parent Company</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-5">
-              <span className="gradient-text">Kognatix</span> Ltd
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Kognatix Ltd is the parent company behind Ruxx Digital Services. With a
-              vision to drive digital transformation across Africa, Kognatix invests in
-              innovative technology solutions that empower individuals and businesses.
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Founder */}
+            <motion.div variants={fadeUp} className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3.5 py-1.5 mb-6 border border-primary/20">
+                <User className="w-3.5 h-3.5 text-primary" />
+                <span className="text-[11px] font-semibold text-primary tracking-wide">Founder</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">
+                Victor Chidiebere <span className="gradient-text">Ruben</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Victor Chidiebere Ruben is the founder of Ruxx Digital Services, a subsidiary
+                of Kognatix Ltd. With a passion for financial technology and a vision to
+                simplify digital payments across Nigeria, Victor established Ruxx to bridge
+                the gap between traditional banking and modern mobile-first solutions.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Under his leadership, Ruxx has grown into a trusted platform serving thousands
+                of users daily for airtime, data, TV subscriptions, electricity bills, and
+                gift card trading.
+              </p>
+            </motion.div>
+
+            {/* Parent Company */}
+            <motion.div variants={fadeUp} custom={1}>
+              <div className="rounded-3xl p-8 border text-center" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+                <div className="inline-flex items-center gap-2 bg-gold/10 rounded-full px-3.5 py-1.5 mb-6 border border-gold/20">
+                  <Users className="w-3.5 h-3.5 text-gold" />
+                  <span className="text-[11px] font-semibold text-gold tracking-wide">Parent Company</span>
+                </div>
+                <h3 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
+                  <span className="gradient-text">Kognatix</span> Ltd
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Kognatix Ltd is the parent company behind Ruxx Digital Services. With a
+                  vision to drive digital transformation across Africa, Kognatix invests in
+                  innovative technology solutions that empower individuals and businesses.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
