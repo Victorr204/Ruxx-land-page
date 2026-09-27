@@ -6,8 +6,8 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const pageSEO = {
   "/": {
-    title: "Ruxx Prepaid — Airtime, Data, Electricity & Cable TV Top-Ups | Ruxx Digital Services",
-    description: "ruxx prepaid is a utility and bill payment platform. Instantly buy airtime, data, electricity tokens and TV subscriptions, and trade gift cards. Not a bank — prepaid credits only. A subsidiary of Kognatix Ltd.",
+    title: "Ruxx Digital Services — Airtime, Data, Electricity & Cable TV Top-Ups",
+    description: "Ruxx Digital Services is a utility and bill payment app. Instantly buy airtime, data, electricity tokens and TV subscriptions, and trade retail gift cards. A subsidiary of Kognatix Ltd.",
     canonical: `${SITE_URL}/`,
   },
   "/ruxx-prepaid": {
@@ -17,7 +17,7 @@ const pageSEO = {
   },
   "/ruxx-swap": {
     title: "Ruxx Swap — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
-    description: "Trade gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly, with credit added to your prepaid balance.",
+    description: "Trade retail gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly, with credit added to your prepaid balance.",
     canonical: `${SITE_URL}/ruxx-swap`,
   },
   // Legacy slugs — keep working, but point search engines at the new URLs
@@ -109,6 +109,11 @@ export default function SEO({ path }) {
     setMeta("twitter:title", page.title);
     setMeta("twitter:description", page.description);
     setMeta("twitter:image", ogImage);
+
+    // Unknown/removed blog posts (e.g. articles deleted from articles.js) must
+    // drop out of search indexes instead of lingering as soft 404s.
+    const isRemovedPost = path.startsWith("/blog/") && !getBlogPostSEO(path);
+    setMeta("robots", isRemovedPost ? "noindex, nofollow" : "index, follow");
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {

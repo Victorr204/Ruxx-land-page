@@ -302,8 +302,8 @@ Mobile money services have gained significant traction, particularly in underser
 ### Payment Processors
 Companies like Paystack (acquired by Stripe) and Flutterwave provide the infrastructure that powers digital payments for businesses and consumers across Nigeria. They handle the complex backend processing that makes instant transactions possible.
 
-### Fintech Platforms
-A new generation of fintech companies is emerging, offering comprehensive financial services beyond just payments. These platforms combine bill payments, savings, investments, and gift card trading into single, user-friendly applications.
+### Savings and Investment Apps
+A separate group of digital finance companies has emerged around savings, investments and lending. These are distinct from bill payment apps like ruxx prepaid, which only sells airtime, data, electricity tokens, cable TV subscriptions and retail gift cards.
 
 ### Banks
 Traditional banks are also adapting to the digital shift, launching their own mobile apps and partnering with fintech companies to offer enhanced digital services.

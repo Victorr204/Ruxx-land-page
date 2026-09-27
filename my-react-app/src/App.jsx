@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -47,9 +47,10 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/ruxx-prepaid" element={<RuxxPrepaid />} />
                 <Route path="/ruxx-swap" element={<RuxxSwap />} />
-                {/* Legacy aliases — kept so old links and search indexes keep working */}
-                <Route path="/ruxxpay" element={<RuxxPrepaid />} />
-                <Route path="/ruxx-card" element={<RuxxSwap />} />
+                {/* Legacy aliases — redirect so old links keep working but only the
+                    canonical URLs (/ruxx-prepaid, /ruxx-swap) ever get indexed */}
+                <Route path="/ruxxpay" element={<Navigate to="/ruxx-prepaid" replace />} />
+                <Route path="/ruxx-card" element={<Navigate to="/ruxx-swap" replace />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/terms" element={<Terms />} />

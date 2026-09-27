@@ -44,13 +44,6 @@ const TOPIC_DATABASE = [
     category: "Payments",
   },
   {
-    id: "mobile-money-africa",
-    topic: "use mobile money safely and efficiently in Africa",
-    keywords: ["mobile money", "Africa", "digital wallet", "financial inclusion"],
-    angle: "The complete guide to mobile money for African consumers",
-    category: "Insights",
-  },
-  {
     id: "fintech-security",
     topic: "protect yourself from online payment fraud in Nigeria",
     keywords: ["security", "fraud", "scam", "phishing", "safe"],
@@ -74,16 +67,9 @@ const TOPIC_DATABASE = [
   {
     id: "digital-payments-trends",
     topic: "understand digital payment trends shaping Nigeria in 2026",
-    keywords: ["trends", "digital payment", "fintech", "future"],
+    keywords: ["trends", "digital payment", "bill payment", "future"],
     angle: "Analysis of the latest developments in Nigeria's digital space",
     category: "Insights",
-  },
-  {
-    id: "ussd-banking",
-    topic: "use USSD banking effectively without internet",
-    keywords: ["USSD", "banking", "offline", "no internet"],
-    angle: "How to bank without data using USSD codes in Nigeria",
-    category: "Technology",
   },
   {
     id: "financial-literacy",
@@ -91,20 +77,6 @@ const TOPIC_DATABASE = [
     keywords: ["financial literacy", "budgeting", "saving", "money management"],
     angle: "Practical financial tips for everyday Nigerians",
     category: "Business",
-  },
-  {
-    id: "cryptocurrency-nigeria",
-    topic: "buy and sell cryptocurrency safely in Nigeria",
-    keywords: ["crypto", "bitcoin", "ethereum", "blockchain"],
-    angle: "A beginner-friendly guide to crypto trading in Nigeria",
-    category: "Insights",
-  },
-  {
-    id: "enaira-guide",
-    topic: "use the eNaira digital currency in Nigeria",
-    keywords: ["eNaira", "CBN", "digital currency", "central bank"],
-    angle: "Everything you need to know about Nigeria's digital currency",
-    category: "Insights",
   },
   {
     id: "collection-account",

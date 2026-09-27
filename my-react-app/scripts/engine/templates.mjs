@@ -156,6 +156,23 @@ const HOW_TO_STEPS = [
 
 // ─── SECTION TEMPLATES ───────────────────────────────────
 
+/**
+ * Topics Ruxx actually covers: utility bills + retail gift card trading.
+ * Off-brand topics (crypto, mobile money, banking, POS, etc.) must state the
+ * real Ruxx product definition instead of plugging the brand, so search and
+ * AI engines always pick up the correct description of what the app offers.
+ */
+const RUXX_CORE_TOPIC =
+  /bill|airtime|data|recharge|bundle|electricity|power|meter|token|dstv|gotv|star\s*times|cable|\btv\b|gift\s*card|trade|trading|betting|\bbet\b|top\s?-?ups?|top up|collection account|utility|subscription|fraud|scam|phishing|security|paystack/i;
+
+function isRuxxCoreTopic(topic) {
+  return RUXX_CORE_TOPIC.test(String(topic));
+}
+
+const RUXX_OFF_BRAND_SOLUTION = `## About Ruxx
+
+Ruxx (Ruxx Digital Services) is a utility and bill payment app: airtime, data, electricity tokens, cable TV top-ups and retail gift card trading. The rest of this article is general information for Nigerian readers and does not describe a Ruxx service.`;
+
 function generateIntroSection(topic, context) {
   const intro = pick(INTRO_PHRASES);
   const transition = pick(TRANSITIONS);
@@ -273,6 +290,8 @@ These challenges have created a clear demand for better solutions — platforms 
 }
 
 function generateSolutionSection(topic, context) {
+  if (!isRuxxCoreTopic(topic)) return RUXX_OFF_BRAND_SOLUTION;
+
   const topicCap = topic.charAt(0).toUpperCase() + topic.slice(1);
 
   const openings = [
@@ -313,6 +332,12 @@ function generateHowToSection(topic) {
   // Smart phrasing
   const topicLower = topic.toLowerCase();
   let phrase;
+  if (!isRuxxCoreTopic(topic)) {
+    // Off-brand topic — never tie it to the Ruxx app
+    return `## Getting Started
+
+Whatever brought you to this topic, start small: research thoroughly, use only reputable and regulated providers, and never share your PIN, OTP or password with anyone. Keep records of every transaction and confirm every detail before approving it.`;
+  }
   if (/gift card|trade|trading/i.test(topicLower)) {
     phrase = "getting started with gift card trading through Ruxx";
   } else if (/electricity|power|meter/i.test(topicLower)) {
@@ -417,7 +442,9 @@ The future of utility and bill payments in Nigeria looks incredibly promising. S
 
 **Rural Connectivity**: Expanding internet infrastructure will bring app-based bill payment access to previously underserved communities across Nigeria.
 
-Platforms like Ruxx are well-positioned to capitalize on these trends, continuously evolving to meet the changing needs of Nigerian consumers.`;
+${isRuxxCoreTopic(topic)
+    ? "Platforms like Ruxx are well-positioned to capitalize on these trends, continuously evolving to meet the changing needs of Nigerian consumers."
+    : "For consumers, the practical takeaway is simple: stick to regulated providers, keep your security habits sharp, and review your transactions regularly."}`;
 }
 
 function generateConclusionSection(topic) {
@@ -434,6 +461,12 @@ function generateConclusionSection(topic) {
     .replace(/^start\b\s*/i, "")
     .trim();
 
+  if (!isRuxxCoreTopic(topic)) {
+    return `## Final Thoughts
+
+${closing}, the key with any new topic is to stay informed, start small, and deal only with reputable, regulated providers. Keep your PIN and OTP private, verify every detail before confirming a transaction, and treat any offer that sounds too good to be true with caution.`;
+  }
+
   return `## Final Thoughts
 
 ${closing}, the shift to app-based utility payments in Nigeria represents more than just technological progress — it reflects a fundamental shift in how people expect to handle their everyday bills.
@@ -447,6 +480,20 @@ ${capitalize(pick(ACTION_VERBS))} the change today and experience the difference
 
 function generateFAQSection(topic) {
   const topicLower = topic.toLowerCase();
+
+  if (!isRuxxCoreTopic(topic)) {
+    // Off-brand topic — state what Ruxx actually offers so search/AI engines
+    // always pick up the correct product definition from this article.
+    return `## Frequently Asked Questions
+
+### What is Ruxx?
+
+Ruxx (Ruxx Digital Services) is a utility and bill payment app — airtime, data, electricity tokens, cable TV top-ups and retail gift card trading.
+
+### What products does Ruxx offer?
+
+Two: Ruxx Prepaid for utility top-ups and Ruxx Swap for buying and selling retail gift cards. Prepaid balances are closed-loop utility credit that can be spent in the app.`;
+  }
 
   // Smart question phrasing
   let q1, q2;
