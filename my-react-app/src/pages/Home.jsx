@@ -24,10 +24,10 @@ const fadeUp = {
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
 const faqs = [
-  { q: "What is Ruxx Digital Services?", a: "Ruxx Digital Services is a mobile payment platform built for Nigerians. We offer two core products — RuxxPay for everyday bill payments and Ruxx Card for gift card trading." },
-  { q: "Is my money safe?", a: "Yes. All payments are processed through Paystack's PCI-compliant infrastructure with bank-grade encryption. Your funds are protected at every step." },
-  { q: "What fees does Ruxx charge?", a: "Fees vary by product. RuxxPay charges a flat 1.5% on wallet deposits. Ruxx Card offers competitive rates updated daily. No hidden charges on either platform." },
-  { q: "How do I get started?", a: "Download the app from Google Play or App Store, create an account, and fund your wallet. You can start using any of our services immediately." },
+  { q: "What is Ruxx Digital Services?", a: "Ruxx Digital Services is a utility aggregation and value-added services platform built for Nigerians. We offer two core products — Ruxx Prepaid for airtime, data, electricity and cable TV top-ups, and Ruxx Swap for gift card trading." },
+  { q: "Is Ruxx Prepaid a bank or wallet app?", a: "No. ruxx prepaid is not a bank, Mobile Money Operator, or deposit-taking institution. It is a closed-loop utility credit platform: balances can be spent inside the app but cannot be withdrawn or transferred out. Payments are collected by Paystack under its CBN-licensed gateway." },
+  { q: "What fees does Ruxx charge?", a: "Fees vary by product. Ruxx Prepaid charges a flat 1.5% on balance top-ups. Ruxx Swap offers competitive gift card rates updated daily. No hidden charges on either platform." },
+  { q: "How do I get started?", a: "Download the app from Google Play or App Store, create an account, and top up your prepaid balance. You can start using any of our services immediately." },
   { q: "How do I contact support?", a: "Reach us 24/7 via email at info@ruxxdigital.name.ng or through our in-app support chat." },
 ];
 
@@ -96,7 +96,7 @@ export default function Home() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground"
               style={{ letterSpacing: "-0.03em", lineHeight: 1.08 }}
             >
-              Smarter payments.
+              Pay every bill.
               <br />
               <span className="gradient-text">Zero stress.</span>
             </motion.h1>
@@ -106,24 +106,24 @@ export default function Home() {
               className="text-muted-foreground mx-auto"
               style={{ maxWidth: "28rem", marginTop: "1.5rem", lineHeight: 1.65, fontSize: "1rem" }}
             >
-              One platform for all your digital payments. Buy airtime, pay bills,
-              trade gift cards — fast, secure, and at the best rates in Nigeria.
+              Your all-in-one utility and bill payment hub. Buy airtime, data, electricity
+              tokens and cable TV — plus trade gift cards — fast, secure, and at the best rates in Nigeria.
             </motion.p>
 
             <motion.div variants={fadeUp} custom={3} className="flex flex-wrap justify-center" style={{ gap: "0.75rem", marginTop: "2rem" }}>
               <Link
-                to="/ruxxpay"
+                to="/ruxx-prepaid"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-bold transition-all hover:opacity-90"
                 style={{ padding: "0.875rem 1.75rem", background: "var(--primary)", color: "var(--primary-foreground)" }}
               >
-                Explore RuxxPay <ArrowRight style={{ width: "16px", height: "16px" }} />
+                Explore Ruxx Prepaid <ArrowRight style={{ width: "16px", height: "16px" }} />
               </Link>
               <Link
-                to="/ruxx-card"
+                to="/ruxx-swap"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-medium transition-all hover:bg-muted"
                 style={{ padding: "0.875rem 1.75rem", border: "1px solid var(--border)", color: "var(--foreground)" }}
               >
-                Explore Ruxx Card
+                Explore Ruxx Swap
               </Link>
             </motion.div>
 
@@ -193,16 +193,16 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-5 md:p-6">
-            {/* RuxxPay */}
+            {/* Ruxx Prepaid */}
             <motion.div variants={fadeUp}>
-              <Link to="/ruxxpay" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+              <Link to="/ruxx-prepaid" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: "rgba(124,58,237,0.1)" }}>
                   <Smartphone className="w-7 h-7 text-primary" />
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full mb-4" style={{ padding: "0.25rem 0.625rem", background: "rgba(124,58,237,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-primary tracking-wide">RuxxPay</span>
+                  <span className="text-[10px] font-semibold text-primary tracking-wide">Ruxx Prepaid</span>
                 </div>
-                <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Your wallet, supercharged.</h3>
+                <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Every utility, one balance.</h3>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
                   Airtime, data, TV, electricity, betting — all your bill payments handled instantly from one app.
                 </p>
@@ -217,14 +217,14 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Ruxx Card */}
+            {/* Ruxx Swap */}
             <motion.div variants={fadeUp} custom={1}>
-              <Link to="/ruxx-card" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+              <Link to="/ruxx-swap" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: "rgba(245,158,11,0.1)" }}>
                   <CreditCard className="w-7 h-7 text-gold" />
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full mb-4" style={{ padding: "0.25rem 0.625rem", background: "rgba(245,158,11,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Card</span>
+                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Swap</span>
                 </div>
                 <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Trade gift cards at the best rates.</h3>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
@@ -257,19 +257,19 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* RuxxPay side */}
+            {/* Ruxx Prepaid side */}
             <motion.div variants={fadeUp}>
-              <Link to="/ruxxpay" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+              <Link to="/ruxx-prepaid" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(124,58,237,0.3)"}
                 onMouseOut={(e) => e.currentTarget.style.borderColor = "var(--card-border)"}
               >
                 <div className="inline-flex items-center gap-2 rounded-full mb-5" style={{ padding: "0.25rem 0.625rem", background: "rgba(124,58,237,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-primary tracking-wide">RuxxPay</span>
+                  <span className="text-[10px] font-semibold text-primary tracking-wide">Ruxx Prepaid</span>
                 </div>
                 <h3 className="text-xl font-black text-foreground mb-4">Pay bills in 3 steps</h3>
                 <div className="space-y-4">
                   {[
-                    { step: "1", title: "Fund your wallet", desc: "Transfer to your Paystack virtual account. Funds reflect instantly." },
+                    { step: "1", title: "Top up your balance", desc: "Credit your personal Paystack collection account. It reflects instantly." },
                     { step: "2", title: "Pick a service", desc: "Airtime, data, TV, electricity, or betting — choose what you need." },
                     { step: "3", title: "Complete payment", desc: "Confirm and done. Transaction completes in under 10 seconds." },
                   ].map((s, i) => (
@@ -285,26 +285,26 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mt-6 group-hover:gap-3 transition-all">
-                  Explore RuxxPay <ArrowRight className="w-4 h-4" />
+                  Explore Ruxx Prepaid <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
             </motion.div>
 
-            {/* Ruxx Card side */}
+            {/* Ruxx Swap side */}
             <motion.div variants={fadeUp} custom={1}>
-              <Link to="/ruxx-card" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+              <Link to="/ruxx-swap" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(245,158,11,0.3)"}
                 onMouseOut={(e) => e.currentTarget.style.borderColor = "var(--card-border)"}
               >
                 <div className="inline-flex items-center gap-2 rounded-full mb-5" style={{ padding: "0.25rem 0.625rem", background: "rgba(245,158,11,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Card</span>
+                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Swap</span>
                 </div>
                 <h3 className="text-xl font-black text-foreground mb-4">Trade cards in 3 steps</h3>
                 <div className="space-y-4">
                   {[
                     { step: "1", title: "Submit your card", desc: "Enter card details and get an instant rate estimate." },
                     { step: "2", title: "Confirm the trade", desc: "Accept the rate. Send your gift card securely." },
-                    { step: "3", title: "Get paid instantly", desc: "Naira hits your wallet the moment the card is verified." },
+                    { step: "3", title: "Get credited instantly", desc: "Naira credit lands in your Ruxx Swap balance the moment the card is verified." },
                   ].map((s, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(245,158,11,0.1)" }}>
@@ -318,7 +318,7 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="inline-flex items-center gap-2 text-gold font-semibold text-sm mt-6 group-hover:gap-3 transition-all">
-                  Explore Ruxx Card <ArrowRight className="w-4 h-4" />
+                  Explore Ruxx Swap <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
             </motion.div>
@@ -340,7 +340,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <ShieldCheck className="w-5 h-5" />, title: "Bank-Grade Security", desc: "PCI-DSS compliant. Every transaction encrypted end-to-end via Paystack.", color: "rgba(124,58,237,0.1)", iconColor: "var(--primary)" },
+              { icon: <ShieldCheck className="w-5 h-5" />, title: "End-to-End Encrypted", desc: "PCI-DSS compliant. Every transaction encrypted end-to-end via Paystack.", color: "rgba(124,58,237,0.1)", iconColor: "var(--primary)" },
               { icon: <Zap className="w-5 h-5" />, title: "Lightning Fast", desc: "Transactions complete in under 10 seconds. No delays, no downtime.", color: "rgba(245,158,11,0.1)", iconColor: "var(--gold)" },
               { icon: <BadgeDollarSign className="w-5 h-5" />, title: "Best Rates", desc: "Transparent pricing with no hidden fees. You always know what you pay.", color: "rgba(34,197,94,0.1)", iconColor: "#22c55e" },
               { icon: <Headphones className="w-5 h-5" />, title: "24/7 Support", desc: "Real humans ready to help anytime via email or in-app chat.", color: "rgba(59,130,246,0.1)", iconColor: "#3b82f6" },
@@ -502,7 +502,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center" style={{ gap: "0.75rem", marginTop: "2rem", position: "relative" }}>
               <Link
-                to="/ruxxpay"
+                to="/ruxx-prepaid"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-bold transition-all hover:opacity-90"
                 style={{ padding: "0.875rem 2rem", background: "var(--primary)", color: "var(--primary-foreground)" }}
               >

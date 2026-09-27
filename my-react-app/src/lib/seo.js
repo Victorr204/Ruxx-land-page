@@ -6,23 +6,34 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const pageSEO = {
   "/": {
-    title: "Ruxx Digital Services — Smarter Payments. Zero Stress.",
-    description: "Your all-in-one mobile payment app. Instantly purchase airtime, data, TV subscriptions, electricity bills, and trade gift cards. A subsidiary of Kognatix Ltd.",
+    title: "Ruxx Prepaid — Airtime, Data, Electricity & Cable TV Top-Ups | Ruxx Digital Services",
+    description: "ruxx prepaid is a utility and bill payment platform. Instantly buy airtime, data, electricity tokens and TV subscriptions, and trade gift cards. Not a bank — prepaid credits only. A subsidiary of Kognatix Ltd.",
     canonical: `${SITE_URL}/`,
   },
+  "/ruxx-prepaid": {
+    title: "Ruxx Prepaid — Airtime, Data, TV, Electricity Top-Ups | Ruxx Digital Services",
+    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals. A subsidiary of Kognatix Ltd.",
+    canonical: `${SITE_URL}/ruxx-prepaid`,
+  },
+  "/ruxx-swap": {
+    title: "Ruxx Swap — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
+    description: "Trade gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly, with credit added to your prepaid balance.",
+    canonical: `${SITE_URL}/ruxx-swap`,
+  },
+  // Legacy slugs — keep working, but point search engines at the new URLs
   "/ruxxpay": {
-    title: "RuxxPay — Airtime, Data, TV, Electricity Payments | Ruxx Digital Services",
-    description: "Pay bills instantly with RuxxPay. Buy airtime, data, TV subscriptions, pay electricity bills, and fund betting wallets — all from your phone.",
-    canonical: `${SITE_URL}/ruxxpay`,
+    title: "Ruxx Prepaid — Airtime, Data, TV, Electricity Top-Ups | Ruxx Digital Services",
+    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals.",
+    canonical: `${SITE_URL}/ruxx-prepaid`,
   },
   "/ruxx-card": {
-    title: "Ruxx Card — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
-    description: "Trade gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play, and other gift cards instantly with secure payments.",
-    canonical: `${SITE_URL}/ruxx-card`,
+    title: "Ruxx Swap — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
+    description: "Trade gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly.",
+    canonical: `${SITE_URL}/ruxx-swap`,
   },
   "/about": {
     title: "About Us — Victor Chidiebere Ruben, Founder | Ruxx Digital Services",
-    description: "Learn about Ruxx Digital Services, founded by Victor Chidiebere Ruben. A subsidiary of Kognatix Ltd, on a mission to make digital payments smarter and easier for everyone.",
+    description: "Learn about Ruxx Digital Services, a value-added services reseller and utility aggregation platform founded by Victor Chidiebere Ruben. A subsidiary of Kognatix Ltd.",
     canonical: `${SITE_URL}/about`,
   },
   "/contact": {
@@ -32,12 +43,12 @@ const pageSEO = {
   },
   "/paystack": {
     title: "Payment Security — Powered by Paystack | Ruxx Digital Services",
-    description: "Your payments are secured with Paystack's PCI-DSS compliant infrastructure. Bank-level encryption protects every transaction.",
+    description: "Every top-up on ruxx prepaid is processed by Paystack under its PCI-DSS Level 1 and CBN-licensed payment gateway infrastructure. End-to-end encryption protects every transaction.",
     canonical: `${SITE_URL}/paystack`,
   },
   "/terms": {
     title: "Terms of Service — Ruxx Digital Services",
-    description: "Read the terms and conditions governing the use of Ruxx Digital Services and our payment platforms.",
+    description: "Read the terms governing ruxx prepaid — a utility aggregation interface. Prepaid balances are non-withdrawable, non-transferable utility credit.",
     canonical: `${SITE_URL}/terms`,
   },
   "/privacy": {
@@ -46,8 +57,8 @@ const pageSEO = {
     canonical: `${SITE_URL}/privacy`,
   },
   "/blog": {
-    title: "Blog — Insights & Guides on Digital Payments | Ruxx Digital Services",
-    description: "Stay informed about digital payments, fintech trends, and practical guides for managing your finances in Nigeria.",
+    title: "Blog — Guides on Airtime, Data, Bills & Gift Cards | Ruxx Digital Services",
+    description: "Practical guides on airtime, data, electricity tokens, cable TV subscriptions, gift card trading and staying safe online in Nigeria.",
     canonical: `${SITE_URL}/blog`,
   },
 };

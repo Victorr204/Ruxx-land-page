@@ -44,7 +44,7 @@ const FINTECH_KEYWORDS = [
   "CBN", "regulation", "central bank", "eNaira",
   "startup", "venture capital", "funding", "investment",
   "scam", "fraud", "security", "phishing",
-  "transaction", "transfer", "wallet", "virtual account",
+  "transaction", "transfer", "top-up", "collection account",
   "Nigeria", "African", "Lagos", "Abuja",
 ];
 
@@ -56,7 +56,7 @@ const FINTECH统计数据 = [
   "Nigeria has over 200 million active mobile phone subscribers",
   "Digital payments now account for 60% of all financial transactions in Nigeria",
   "The POS agent network in Nigeria exceeds 1.5 million terminals",
-  "Nigeria's eNaira has recorded over 13 million wallet downloads",
+  "Nigeria's eNaira has recorded over 13 million downloads",
   "Fintech startups in Lagos raised $400 million in the first half of 2025",
   "USSD banking transactions process over $2 billion monthly in Nigeria",
   "Nigeria's broadband penetration reached 48% in 2025",
@@ -69,10 +69,10 @@ const FINTECH统计数据 = [
 const RANDOM统计数据 = [
   "a recent survey showed that 78% of Nigerians find mobile payments more convenient",
   "industry reports indicate that bill payment apps save users an average of 2 hours per week",
-  "the average transaction on fintech platforms takes less than 10 seconds to complete",
-  "over 90% of smartphone users in Nigeria have used a digital payment service",
+  "the average transaction on bill payment platforms takes less than 10 seconds to complete",
+  "over 90% of smartphone users in Nigeria have used a bill payment service",
   "customer satisfaction rates for mobile payment apps exceed 85% in Nigeria",
-  "the cost of sending money via mobile is 70% lower than traditional bank transfers",
+  "the cost of paying bills via mobile is 70% lower than queueing at a bank",
   "digital payment adoption in rural Nigeria grew by 55% in the past year",
   "the average Nigerian household now spends 35% of their bills through mobile apps",
 ];

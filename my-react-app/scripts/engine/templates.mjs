@@ -47,14 +47,14 @@ const INTRO_PHRASES = [
   "With the rapid growth of mobile technology across Africa",
   "In an era where convenience is paramount",
   "As more Nigerians embrace digital solutions",
-  "Given the increasing demand for instant financial services",
-  "Across Nigeria's bustling fintech ecosystem",
+  "Given the increasing demand for instant bill payments",
+  "Across Nigeria's fast-growing utility and bill payment space",
   "In a country where mobile phones are everywhere",
   "As smartphone adoption reaches new heights in Nigeria",
   "Within Africa's most vibrant tech hub",
   "In a market where speed and reliability matter most",
-  "As the financial technology sector matures in Nigeria",
-  "With millions of Nigerians seeking better payment solutions",
+  "As Nigeria's digital payments sector matures",
+  "With millions of Nigerians seeking better bill payment solutions",
   "In a nation leading Africa's digital revolution",
   "As digital transformation reshapes everyday transactions",
 ];
@@ -137,10 +137,10 @@ const HOW_TO_STEPS = [
     "Create your account by entering your name, email, and phone number",
     "Register using your mobile number and verify your identity",
   ]},
-  { step: "Fund wallet", variants: [
-    "Fund your wallet via bank transfer to your unique virtual account",
-    "Add money to your wallet through instant bank transfer",
-    "Top up your wallet using any Nigerian bank's transfer feature",
+  { step: "Top up balance", variants: [
+    "Top up your prepaid balance via transfer to your unique collection account",
+    "Add utility credit to your balance through an instant transfer",
+    "Top up your balance using any Nigerian bank's transfer feature",
   ]},
   { step: "Select service", variants: [
     "Choose the service you need from the dashboard",
@@ -196,7 +196,7 @@ function generateIntroSection(topic, context) {
 
 ${transition}, the shift toward digital solutions has fundamentally changed how people manage their daily financial tasks. ${capitalize(pick(BENEFITS))}, making it easier than ever to stay on top of your obligations.
 
-${capitalize(pick(TRANSITIONS))}, recent data shows that ${stat}. This trend underscores the growing importance of reliable digital payment platforms.`;
+${capitalize(pick(TRANSITIONS))}, recent data shows that ${stat}. This trend underscores the growing importance of reliable utility and bill payment platforms.`;
 }
 
 function generateProblemSection(topic) {
@@ -234,8 +234,8 @@ function generateProblemSection(topic) {
     actionVerb = "renew " + topicLower;
     gerund = "renewing " + topicLower;
   } else if (/bet|betting|wallet/i.test(topicLower)) {
-    actionVerb = "fund " + topicLower;
-    gerund = "funding " + topicLower;
+    actionVerb = "top up your betting account";
+    gerund = "topping up your betting account";
   } else if (/pos|business/i.test(topicLower)) {
     actionVerb = "start a " + topicLower;
     gerund = "starting a " + topicLower;
@@ -276,10 +276,10 @@ function generateSolutionSection(topic, context) {
   const topicCap = topic.charAt(0).toUpperCase() + topic.slice(1);
 
   const openings = [
-    `Digital payment platforms like Ruxx address these challenges head-on. By consolidating multiple services into a single app, they eliminate the need for separate platforms and physical visits.`,
-    `This is exactly where modern fintech solutions make a difference. Platforms such as Ruxx Digital Services have been designed specifically to solve the pain points that Nigerians face daily.`,
-    `The solution lies in embracing digital payment platforms that understand the Nigerian market. Ruxx, for instance, was built from the ground up to cater to local payment needs.`,
-    `Fortunately, the fintech space has evolved rapidly, and platforms like Ruxx now offer a comprehensive answer to these persistent problems.`,
+    `Utility platforms like Ruxx address these challenges head-on. By consolidating multiple services into a single app, they eliminate the need for separate platforms and physical visits.`,
+    `This is exactly where modern bill payment apps make a difference. Platforms such as Ruxx Digital Services have been designed specifically to solve the pain points that Nigerians face daily.`,
+    `The solution lies in embracing utility aggregation platforms that understand the Nigerian market. Ruxx, for instance, was built from the ground up to cater to local bill payment needs.`,
+    `Fortunately, utility apps have evolved rapidly, and platforms like Ruxx now offer a comprehensive answer to these persistent problems.`,
     `Enter Ruxx — a platform built by Nigerians, for Nigerians, designed to make ${topic.toLowerCase()} as painless as possible.`,
   ];
 
@@ -291,7 +291,7 @@ function generateSolutionSection(topic, context) {
     "Real-time transaction notifications for complete peace of mind",
     "A clean, intuitive interface designed for users of all technical levels",
     "Comprehensive transaction history for easy record-keeping and budgeting",
-    "Multiple payment funding options including bank transfer and card payments",
+    "Multiple top-up options including bank transfer and card payments",
     "Instant transaction confirmations with digital receipts",
     "Dedicated customer support that actually responds",
   ];
@@ -320,7 +320,7 @@ function generateHowToSection(topic) {
   } else if (/airtime|data|recharge/i.test(topicLower)) {
     phrase = "recharging your phone through Ruxx";
   } else if (/bet|betting|wallet/i.test(topicLower)) {
-    phrase = "funding your betting wallet through Ruxx";
+    phrase = "topping up your betting account through Ruxx";
   } else if (/dstv|gotv|star|cable|tv/i.test(topicLower)) {
     phrase = "renewing your TV subscription through Ruxx";
   } else if (/pos|business/i.test(topicLower)) {
@@ -361,11 +361,11 @@ function generateSecuritySection() {
 
   return `## Staying Safe: Security Best Practices
 
-While digital payment platforms offer tremendous convenience, it is equally important to practice good security habits. Here are essential tips to keep your transactions secure:
+While bill payment apps offer tremendous convenience, it is equally important to practice good security habits. Here are essential tips to keep your transactions secure:
 
 ${tips.map((t) => `- ${t}`).join("\n")}
 
-${pick(CONCLUDING_PHRASES).toLowerCase()}, by following these practices, you can enjoy the full benefits of digital payments while keeping your financial information safe and secure.`;
+${pick(CONCLUDING_PHRASES).toLowerCase()}, by following these practices, you can enjoy the full benefits of app-based top-ups while keeping your account information safe and secure.`;
 }
 
 function generateComparisonSection(topic) {
@@ -407,15 +407,15 @@ function generateFutureSection(topic) {
 
   return `## What Lies Ahead for ${cleanTopic} in Nigeria
 
-The future of digital payments in Nigeria looks incredibly promising. Several trends are shaping the landscape:
+The future of utility and bill payments in Nigeria looks incredibly promising. Several trends are shaping the landscape:
 
 **Open Banking Initiatives**: The Central Bank of Nigeria's open banking framework will enable better integration between payment platforms, giving consumers more choices and better service.
 
 **eNaira Expansion**: As the eNaira gains adoption, it will create new possibilities for instant, low-cost transactions across all payment categories.
 
-**AI-Powered Personalization**: Future platforms will use artificial intelligence to predict payment patterns, suggest optimal timing, and even negotiate better rates automatically.
+**AI-Powered Personalization**: Future platforms will use artificial intelligence to predict usage patterns, suggest optimal timing, and even negotiate better rates automatically.
 
-**Rural Connectivity**: Expanding internet infrastructure will bring digital payment access to previously underserved communities across Nigeria.
+**Rural Connectivity**: Expanding internet infrastructure will bring app-based bill payment access to previously underserved communities across Nigeria.
 
 Platforms like Ruxx are well-positioned to capitalize on these trends, continuously evolving to meet the changing needs of Nigerian consumers.`;
 }
@@ -436,13 +436,13 @@ function generateConclusionSection(topic) {
 
   return `## Final Thoughts
 
-${closing}, the evolution of digital payments in Nigeria represents more than just technological progress — it reflects a fundamental shift in how people expect to interact with financial services.
+${closing}, the shift to app-based utility payments in Nigeria represents more than just technological progress — it reflects a fundamental shift in how people expect to handle their everyday bills.
 
-${capitalize(pick(TRANSITIONS))}, by choosing a platform like Ruxx, you are not just adopting a tool; you are joining a movement toward more efficient, transparent, and accessible financial services for all Nigerians.
+${capitalize(pick(TRANSITIONS))}, by choosing a platform like Ruxx, you are not just adopting a tool; you are joining a movement toward more efficient, transparent, and accessible bill payment services for all Nigerians.
 
-The question is no longer whether to ${action} digital payments, but rather which platform best suits your needs. With its comprehensive feature set, competitive pricing, and deep understanding of the Nigerian market, Ruxx makes that choice clear.
+The question is no longer whether to ${action} bills online, but rather which platform best suits your needs. With its comprehensive feature set, competitive pricing, and deep understanding of the Nigerian market, Ruxx makes that choice clear.
 
-${capitalize(pick(ACTION_VERBS))} the change today and experience the difference that a truly local, truly digital payment platform can make.`;
+${capitalize(pick(ACTION_VERBS))} the change today and experience the difference that a truly local, truly digital bill payment platform can make.`;
 }
 
 function generateFAQSection(topic) {
@@ -460,8 +460,8 @@ function generateFAQSection(topic) {
     q1 = "Can I buy data bundles on Ruxx?";
     q2 = "Which networks are supported for airtime top-up?";
   } else if (/bet|betting|wallet/i.test(topicLower)) {
-    q1 = "Which betting platforms can I fund through Ruxx?";
-    q2 = "How long does a betting wallet funding take?";
+    q1 = "Which betting platforms can I top up through Ruxx?";
+    q2 = "How long does a betting account top-up take?";
   } else if (/dstv|gotv|star|cable|tv/i.test(topicLower)) {
     q1 = "How do I renew my DStv subscription on Ruxx?";
     q2 = "Does Ruxx support StarTimes and GOtv as well?";
@@ -487,8 +487,8 @@ function generateFAQSection(topic) {
       a: "Ruxx offers competitive, transparent pricing with no hidden fees. You always see the exact amount before confirming any transaction.",
     },
     {
-      q: "How do I fund my Ruxx wallet?",
-      a: "You can fund your wallet through bank transfer to your unique virtual account number. Transfers are instant across all major Nigerian banks.",
+      q: "How do I top up my Ruxx prepaid balance?",
+      a: "You can top up your prepaid balance through a transfer to your unique collection account number. Transfers are instant across all major Nigerian banks. Balances are utility credit — they can be spent in the app but cannot be withdrawn or transferred out.",
     },
     {
       q: "Is my money safe on Ruxx?",
@@ -568,7 +568,7 @@ export function generateExcerpt(topic) {
   } else if (/dstv|gotv|star|cable|tv|subscription/i.test(topicLower)) {
     actionPhrase = `renew your ${topicLower}`;
   } else if (/bet|betting|wallet/i.test(topicLower)) {
-    actionPhrase = `fund your ${topicLower}`;
+    actionPhrase = `top up your betting account`;
   } else if (/pos|business/i.test(topicLower)) {
     actionPhrase = `start a ${topicLower}`;
   } else {
@@ -578,8 +578,8 @@ export function generateExcerpt(topic) {
   const templates = [
     `Discover how to ${actionPhrase} in Nigeria. A comprehensive guide covering step-by-step instructions, benefits, and expert tips.`,
     `Learn everything you need to know about ${topicLower} in this detailed guide. From getting started to advanced tips, we cover it all.`,
-    `A complete guide to ${topicLower} for Nigerian users. Find out how modern fintech solutions make the process faster, cheaper, and more convenient.`,
-    `Looking to ${actionPhrase}? This comprehensive guide walks you through everything you need to know about digital payment solutions in Nigeria.`,
+    `A complete guide to ${topicLower} for Nigerian users. Find out how modern utility apps make the process faster, cheaper, and more convenient.`,
+    `Looking to ${actionPhrase}? This comprehensive guide walks you through everything you need to know about bill payment services in Nigeria.`,
   ];
   return pick(templates);
 }
@@ -625,10 +625,10 @@ export function pickCategory(topic) {
   if (/airtime|data|bundle|recharge/i.test(t)) return "Payments";
   if (/electricity|power|meter|token/i.test(t)) return "Payments";
   if (/security|safe|protect|scam|fraud/i.test(t)) return "Technology";
-  if (/fintech|startup|mobile money|banking/i.test(t)) return "Fintech";
+  if (/fintech|startup|mobile money|banking/i.test(t)) return "Insights";
   if (/bet|sport|betting/i.test(t)) return "Payments";
   if (/business|entrepreneur|pos/i.test(t)) return "Business";
-  return pick(["Payments", "Fintech", "Technology", "Business"]);
+  return pick(["Payments", "Insights", "Guides", "Technology", "Business"]);
 }
 
 export { pick, pickN, shuffle, capitalize, randomInt };

@@ -25,6 +25,16 @@ const THEMES = {
     accent: "#34d399",
     icon: "🏦",
   },
+  Insights: {
+    gradient: ["#059669", "#0d9488"],
+    accent: "#34d399",
+    icon: "💡",
+  },
+  Guides: {
+    gradient: ["#7c3aed", "#db2777"],
+    accent: "#f0abfc",
+    icon: "📘",
+  },
   "Gift Cards": {
     gradient: ["#d97706", "#ea580c"],
     accent: "#fbbf24",
@@ -162,8 +172,8 @@ export async function generateOGImage(article) {
  */
 export async function generateDefaultOGImage() {
   const svg = generateSVG(
-    "Smarter Payments for Everyday Life",
-    "Fintech",
+    "Your All-in-One Utility and Bill Payment Hub",
+    "Guides",
     "default"
   );
   const outputPath = join(OG_DIR, "default.png");

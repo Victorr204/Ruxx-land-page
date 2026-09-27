@@ -7,8 +7,8 @@ import logo from "@/assets/icon.svg";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/ruxxpay", label: "RuxxPay" },
-  { to: "/ruxx-card", label: "Ruxx Card" },
+  { to: "/ruxx-prepaid", label: "Ruxx Prepaid" },
+  { to: "/ruxx-swap", label: "Ruxx Swap" },
   { to: "/blog", label: "Blog" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
@@ -105,7 +105,7 @@ export default function Navbar() {
               </button>
 
               <Link
-                to="/ruxxpay"
+                to="/ruxx-prepaid"
                 className="hidden lg:inline-flex items-center bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
                 style={{ gap: "0.375rem", padding: "0.5rem 1.25rem", fontSize: "13px" }}
               >
@@ -169,7 +169,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <Link
-                to="/ruxxpay"
+                to="/ruxx-prepaid"
                 className="mt-2 flex items-center justify-center bg-primary text-primary-foreground rounded-lg font-semibold"
                 style={{ gap: "0.375rem", padding: "0.625rem 1.25rem", fontSize: "14px" }}
               >

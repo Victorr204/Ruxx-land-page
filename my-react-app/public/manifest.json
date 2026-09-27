@@ -1,7 +1,7 @@
 {
-  "name": "Ruxx Digital Services",
+  "name": "Ruxx Prepaid — Utility & Bill Payments",
   "short_name": "Ruxx",
-  "description": "Smarter payments for everyday life. Airtime, data, TV, electricity, betting, and gift card trading.",
+  "description": "Airtime, data, electricity tokens, cable TV top-ups and gift card trading. A value-added services platform — not a bank.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

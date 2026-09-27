@@ -3,9 +3,9 @@
   <channel>
     <title>Ruxx Digital Services Blog</title>
     <link>https://ruxxdigital.name.ng/blog</link>
-    <description>Guides and insights on digital payments, bill payments, and gift card trading in Nigeria.</description>
+    <description>Guides and insights on airtime, data, electricity tokens, cable TV, and gift card trading in Nigeria.</description>
     <language>en-ng</language>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://ruxxdigital.name.ng/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>How to Pay Bills Online in Nigeria: A Complete Guide</title>
@@ -24,18 +24,18 @@
       <category>Gift Cards</category>
     </item>
     <item>
-      <title>Understanding Virtual Accounts: The Future of Banking in Nigeria</title>
-      <link>https://ruxxdigital.name.ng/blog/understanding-virtual-accounts-nigeria</link>
-      <guid>https://ruxxdigital.name.ng/blog/understanding-virtual-accounts-nigeria</guid>
-      <description>What are virtual accounts, how do they work, and why are they becoming essential for digital payments in Nigeria?</description>
+      <title>How Instant Top-Ups Work: Funding a Prepaid Balance in Nigeria</title>
+      <link>https://ruxxdigital.name.ng/blog/how-instant-top-ups-work-nigeria</link>
+      <guid>https://ruxxdigital.name.ng/blog/how-instant-top-ups-work-nigeria</guid>
+      <description>What a collection account is, why your top-up reflects in seconds, and why prepaid credit can be spent but never withdrawn.</description>
       <pubDate>Sat, 05 Sep 2026 00:00:00 +0100</pubDate>
-      <category>Fintech</category>
+      <category>Guides</category>
     </item>
     <item>
       <title>10 Essential Mobile Payment Security Tips for Nigerians</title>
       <link>https://ruxxdigital.name.ng/blog/mobile-payment-security-tips</link>
       <guid>https://ruxxdigital.name.ng/blog/mobile-payment-security-tips</guid>
-      <description>Protect your money and personal information with these practical security tips for mobile payment apps.</description>
+      <description>Protect your money and personal information with these practical security tips for bill payment apps.</description>
       <pubDate>Thu, 28 Aug 2026 00:00:00 +0100</pubDate>
       <category>Technology</category>
     </item>
@@ -43,9 +43,9 @@
       <title>How Digital Payments Are Transforming Nigeria's Economy</title>
       <link>https://ruxxdigital.name.ng/blog/digital-payments-transforming-nigeria-economy</link>
       <guid>https://ruxxdigital.name.ng/blog/digital-payments-transforming-nigeria-economy</guid>
-      <description>From POS terminals to mobile wallets, discover how digital payment solutions are driving financial inclusion across Nigeria.</description>
+      <description>From POS terminals to utility apps, discover how digital payment infrastructure is driving inclusion across Nigeria.</description>
       <pubDate>Thu, 20 Aug 2026 00:00:00 +0100</pubDate>
-      <category>Fintech</category>
+      <category>Insights</category>
     </item>
     <item>
       <title>Complete Guide to Prepaid Meter Token Purchase in Nigeria</title>

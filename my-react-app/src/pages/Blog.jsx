@@ -26,7 +26,8 @@ export default function Blog() {
               Insights & <span className="gradient-text">Guides</span>
             </h1>
             <p className="mt-4 text-muted-foreground max-w-lg mx-auto leading-relaxed">
-              Stay informed about digital payments, fintech trends, and practical guides for managing your finances in Nigeria.
+              Stay informed with practical guides on airtime, data, electricity tokens, cable TV,
+              gift card trading, and staying safe online in Nigeria.
             </p>
           </motion.div>
         </div>

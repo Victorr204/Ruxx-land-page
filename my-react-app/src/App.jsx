@@ -9,8 +9,8 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 
 const Home = lazy(() => import("@/pages/Home"));
-const RuxxPay = lazy(() => import("@/pages/RuxxPay"));
-const RuxxCard = lazy(() => import("@/pages/RuxxCard"));
+const RuxxPrepaid = lazy(() => import("@/pages/RuxxPrepaid"));
+const RuxxSwap = lazy(() => import("@/pages/RuxxSwap"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Terms = lazy(() => import("@/pages/Terms"));
@@ -45,8 +45,11 @@ export default function App() {
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
-                <Route path="/ruxxpay" element={<RuxxPay />} />
-                <Route path="/ruxx-card" element={<RuxxCard />} />
+                <Route path="/ruxx-prepaid" element={<RuxxPrepaid />} />
+                <Route path="/ruxx-swap" element={<RuxxSwap />} />
+                {/* Legacy aliases — kept so old links and search indexes keep working */}
+                <Route path="/ruxxpay" element={<RuxxPrepaid />} />
+                <Route path="/ruxx-card" element={<RuxxSwap />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/terms" element={<Terms />} />

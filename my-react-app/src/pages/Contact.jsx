@@ -135,7 +135,7 @@ export default function Contact() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { icon: <MessageSquare className="w-5 h-5" />, title: "Quick Response", desc: "Our support team responds to all inquiries within 24 hours. For urgent issues, reach us via phone for immediate assistance.", color: "rgba(124,58,237,0.1)", iconColor: "var(--primary)" },
-              { icon: <HelpCircle className="w-5 h-5" />, title: "Before You Contact", desc: "Check our FAQ section for instant answers to common questions about wallet funding, transactions, refunds, and account setup.", color: "rgba(245,158,11,0.1)", iconColor: "var(--gold)" },
+              { icon: <HelpCircle className="w-5 h-5" />, title: "Before You Contact", desc: "Check our FAQ section for instant answers to common questions about balance top-ups, transactions, refunds, and account setup.", color: "rgba(245,158,11,0.1)", iconColor: "var(--gold)" },
               { icon: <Shield className="w-5 h-5" />, title: "Report an Issue", desc: "If you experience a failed transaction or suspicious activity, contact us immediately. We resolve security concerns within 2 hours.", color: "rgba(34,197,94,0.1)", iconColor: "#22c55e" },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeUp} custom={i} className="rounded-2xl p-6 border"
@@ -158,8 +158,8 @@ export default function Contact() {
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: "Wallet & Funding", desc: "Issues with Paystack virtual account, deposit failures, balance discrepancies." },
-              { title: "Transactions", desc: "Failed airtime, data, TV payments. Wrong number recharges. Betting wallet issues." },
+              { title: "Balance & Top-Ups", desc: "Issues with your Paystack collection account, top-up failures, balance discrepancies." },
+              { title: "Transactions", desc: "Failed airtime, data, TV payments. Wrong number recharges. Betting top-up issues." },
               { title: "Gift Cards", desc: "Card trading rates, pending trades, card rejection, payment delays." },
               { title: "Account & Security", desc: "Password reset, account verification, suspicious activity, data requests." },
             ].map((topic, i) => (

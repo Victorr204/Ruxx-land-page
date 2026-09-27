@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Instagram } from "lucide-react";
 import logo from "@/assets/icon.svg";
+import RegulatoryNotice from "@/components/RegulatoryNotice";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -24,7 +25,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-[13px] text-muted-foreground leading-relaxed max-w-xs">
-              Smarter payments for everyday life. A subsidiary of Kognatix Ltd.
+              Your all-in-one utility &amp; bill payment hub — airtime, data, electricity and cable TV. A subsidiary of Kognatix Ltd.
             </p>
             <div className="flex gap-2 mt-4">
               {socials.map((s, i) => (
@@ -44,8 +45,8 @@ export default function Footer() {
           <div>
             <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">Products</h4>
             <ul className="space-y-2.5">
-              <li><Link to="/ruxxpay" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">RuxxPay</Link></li>
-              <li><Link to="/ruxx-card" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Card</Link></li>
+              <li><Link to="/ruxx-prepaid" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Prepaid</Link></li>
+              <li><Link to="/ruxx-swap" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Swap</Link></li>
             </ul>
           </div>
           <div>
@@ -64,6 +65,10 @@ export default function Footer() {
               <li><Link to="/privacy" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Privacy</Link></li>
             </ul>
           </div>
+        </div>
+
+        <div style={{ marginBottom: "1.25rem" }}>
+          <RegulatoryNotice variant="compact" />
         </div>
 
         <div className="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left" style={{ borderColor: "var(--border)" }}>

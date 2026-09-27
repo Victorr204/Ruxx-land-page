@@ -68,9 +68,9 @@ export default function Paystack() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { icon: <ShieldCheck className="w-5 h-5" />, title: "PCI-DSS Level 1", desc: "The highest level of payment card industry compliance. Your card details are never stored on our servers.", color: "rgba(0,200,83,0.1)", iconColor: "#00C853" },
-              { icon: <Lock className="w-5 h-5" />, title: "256-bit Encryption", desc: "Bank-grade SSL encryption on every data transfer. Same security used by major financial institutions.", color: "rgba(59,130,246,0.1)", iconColor: "#3b82f6" },
+              { icon: <Lock className="w-5 h-5" />, title: "256-bit Encryption", desc: "Strong SSL encryption on every data transfer. The same standard used by major online services.", color: "rgba(59,130,246,0.1)", iconColor: "#3b82f6" },
               { icon: <Zap className="w-5 h-5" />, title: "Instant Processing", desc: "Transactions complete in under 10 seconds. Real-time verification and confirmation.", color: "rgba(245,158,11,0.1)", iconColor: "#f59e0b" },
-              { icon: <CreditCard className="w-5 h-5" />, title: "Multi-Bank Support", desc: "Visa, Mastercard, Verve, and bank transfers. All major payment methods accepted.", color: "rgba(168,85,247,0.1)", iconColor: "#a855f7" },
+              { icon: <CreditCard className="w-5 h-5" />, title: "Payment Methods", desc: "Visa, Mastercard, Verve and bank transfers — every leg handled and settled by Paystack.", color: "rgba(168,85,247,0.1)", iconColor: "#a855f7" },
               { icon: <CheckCircle2 className="w-5 h-5" />, title: "Fraud Detection", desc: "AI-powered fraud monitoring detects and prevents suspicious transactions in real-time.", color: "rgba(236,72,153,0.1)", iconColor: "#ec4899" },
               { icon: <Zap className="w-5 h-5" />, title: "99.99% Uptime", desc: "Enterprise-grade infrastructure with redundant systems. Your payments never go down.", color: "rgba(34,197,94,0.1)", iconColor: "#22c55e" },
             ].map((f, i) => (
@@ -100,10 +100,10 @@ export default function Paystack() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { num: "01", title: "You initiate", desc: "Choose a service and enter payment details in the Ruxx app." },
+              { num: "01", title: "You initiate", desc: "Choose a service and enter payment details in the Ruxx Prepaid app." },
               { num: "02", title: "Encryption", desc: "Your card data is encrypted with 256-bit SSL before leaving your device." },
               { num: "03", title: "Verification", desc: "Paystack verifies the transaction with your bank in real-time." },
-              { num: "04", title: "Confirmation", desc: "Payment is processed and your service is delivered instantly." },
+              { num: "04", title: "Confirmation", desc: "Payment clears and your service is delivered instantly." },
             ].map((step, i) => (
               <motion.div key={i} variants={fadeUp} custom={i} className="text-center">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(0,200,83,0.1)" }}>
@@ -136,7 +136,7 @@ export default function Paystack() {
                   "End-to-end encryption on every transaction",
                   "Real-time fraud detection and prevention",
                   "Instant refund on failed transactions",
-                  "Regulated by CBN (Central Bank of Nigeria)",
+                  "Paystack is licensed & regulated by the CBN (Central Bank of Nigeria)",
                   "Trusted by 100,000+ businesses across Africa",
                 ].map((text, i) => (
                   <div key={i} className="flex items-center text-sm" style={{ gap: "0.75rem", color: "var(--muted-foreground)" }}>
@@ -174,14 +174,14 @@ export default function Paystack() {
               Ready to pay<br /><span className="gradient-text">securely?</span>
             </h2>
             <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-              Experience bank-grade security on every transaction with Ruxx Digital Services powered by Paystack.
+              Experience end-to-end encryption on every top-up with Ruxx Digital Services powered by Paystack.
             </p>
             <div className="flex flex-wrap justify-center" style={{ gap: "0.75rem", marginTop: "2rem" }}>
-              <Link to="/ruxxpay"
+              <Link to="/ruxx-prepaid"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-bold transition-all hover:opacity-90"
                 style={{ padding: "0.875rem 2rem", background: "var(--primary)", color: "var(--primary-foreground)" }}
               >
-                Start with RuxxPay
+                Start with Ruxx Prepaid
               </Link>
               <Link to="/contact"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-medium transition-all hover:bg-muted"

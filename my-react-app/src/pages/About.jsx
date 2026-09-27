@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, ShieldCheck, Zap, Award, Users, TrendingUp, User } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import RegulatoryNotice from "@/components/RegulatoryNotice";
 
 const STATS_API = import.meta.env.VITE_STATS_API_URL;
 const API_BASE = STATS_API ? STATS_API.replace("/api/stats", "") : "";
@@ -31,11 +32,12 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div variants={fadeUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tracking-tight leading-tight">
-              Building the<br />
-              <span className="gradient-text">future of payments.</span>
+              Making every bill<br />
+              <span className="gradient-text">easier to pay.</span>
             </h1>
             <p className="mt-6 text-muted-foreground max-w-lg mx-auto leading-relaxed">
-              A subsidiary of Kognatix Ltd, on a mission to make digital payments accessible, fast, and secure for everyone.
+              A subsidiary of Kognatix Ltd, on a mission to make airtime, data, electricity and
+              cable TV top-ups accessible, fast, and secure for everyone.
             </p>
           </motion.div>
         </div>
@@ -49,19 +51,21 @@ export default function About() {
               <h2 className="text-3xl font-black text-foreground tracking-tight mb-5">Our story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Ruxx Digital Services was born from a simple observation: digital payments
-                  in Nigeria should be easier, faster, and more accessible. Founded under
+                  Ruxx Digital Services was born from a simple observation: paying everyday
+                  bills in Nigeria should be easier, faster, and more accessible. Founded under
                   the umbrella of Kognatix Ltd, we set out to build a platform that would
-                  eliminate the friction in everyday transactions.
+                  eliminate the friction in everyday utility purchases.
                 </p>
                 <p>
                   What started as a vision to simplify airtime purchases has grown into a
-                  comprehensive digital payment ecosystem — covering airtime, data, TV
+                  complete utility aggregation platform — covering airtime, data, TV
                   subscriptions, electricity bills, betting facilitation, and gift card trading.
                 </p>
                 <p>
-                  Today, Ruxx Digital Services powers thousands of transactions daily,
-                  serving users who demand speed, reliability, and transparency.
+                  Today, Ruxx Digital Services powers thousands of top-ups daily,
+                  serving users who demand speed, reliability, and transparency. We are a
+                  value-added services reseller, not a bank — money in only ever buys
+                  services inside the platform.
                 </p>
               </div>
             </motion.div>
@@ -99,9 +103,9 @@ export default function About() {
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Victor Chidiebere Ruben is the founder of Ruxx Digital Services, a subsidiary
-                of Kognatix Ltd. With a passion for financial technology and a vision to
-                simplify digital payments across Nigeria, Victor established Ruxx to bridge
-                the gap between traditional banking and modern mobile-first solutions.
+                of Kognatix Ltd. With a passion for consumer technology and a vision to
+                simplify everyday bill payments across Nigeria, Victor established Ruxx to put
+                airtime, data, power and entertainment in one mobile-first app.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Under his leadership, Ruxx has grown into a trusted platform serving thousands
@@ -141,8 +145,8 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Mission</h3>
               <p className="text-[14px] text-muted-foreground leading-relaxed">
-                To provide fast, reliable, and affordable digital payment solutions that
-                empower every Nigerian to manage their everyday transactions with ease
+                To provide fast, reliable, and affordable utility and bill payment services that
+                empower every Nigerian to take care of their everyday top-ups with ease
                 and confidence.
               </p>
             </motion.div>
@@ -152,9 +156,9 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Vision</h3>
               <p className="text-[14px] text-muted-foreground leading-relaxed">
-                To become Africa's leading digital payment platform, bridging the gap
-                between traditional financial services and the digital economy through
-                innovation and user-centric design.
+                To become Africa's leading utility aggregation and value-added services
+                platform, connecting everyday Nigerians to airtime, data, power and
+                entertainment through simple, transparent, mobile-first design.
               </p>
             </motion.div>
           </div>
@@ -171,7 +175,7 @@ export default function About() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: <ShieldCheck className="w-5 h-5" />, title: "Trust", desc: "Bank-grade security on every transaction.", color: "text-purple-500" },
+              { icon: <ShieldCheck className="w-5 h-5" />, title: "Trust", desc: "End-to-end encryption on every top-up.", color: "text-purple-500" },
               { icon: <Zap className="w-5 h-5" />, title: "Innovation", desc: "Evolving to deliver faster solutions.", color: "text-amber-500" },
               { icon: <Heart className="w-5 h-5" />, title: "User-First", desc: "Every feature starts with our users.", color: "text-pink-500" },
               { icon: <Award className="w-5 h-5" />, title: "Excellence", desc: "The highest standards in everything.", color: "text-emerald-500" },
@@ -185,6 +189,22 @@ export default function About() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* REGULATORY NOTICE */}
+      <section className="py-12 md:py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div variants={fadeUp} className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full" style={{ padding: "0.25rem 0.75rem", marginBottom: "1rem", background: "rgba(124,58,237,0.08)", border: "1px solid rgba(124,58,237,0.12)" }}>
+              <span className="text-[10px] font-semibold text-primary tracking-wider uppercase">Compliance</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
+              What we are — <span className="gradient-text">and what we are not.</span>
+            </h2>
+          </motion.div>
+          <motion.div variants={fadeUp}>
+            <RegulatoryNotice variant="full" />
+          </motion.div>
         </div>
       </section>
     </motion.div>

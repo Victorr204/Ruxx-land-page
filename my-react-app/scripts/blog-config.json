@@ -23,12 +23,12 @@
   "article": {
     "minWords": 1200,
     "maxWords": 2000,
-    "categories": ["Payments", "Fintech", "Gift Cards", "Technology", "Business"],
+    "categories": ["Payments", "Insights", "Guides", "Gift Cards", "Technology", "Business"],
     "topics": [
       "bill payments Nigeria",
       "mobile money Africa",
       "gift card trading Nigeria",
-      "fintech startups Africa",
+      "utility apps Africa",
       "digital payments trends",
       "cryptocurrency Nigeria",
       "online security tips",
@@ -36,7 +36,7 @@
       "airtime data bundles",
       "electricity bill payment",
       "DStv subscription Nigeria",
-      "betting wallet funding",
+      "betting account top-up",
       "Paystack payment gateway",
       "USSD banking Nigeria",
       "POS business Nigeria"
