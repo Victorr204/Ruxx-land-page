@@ -12,7 +12,7 @@ const pageSEO = {
   },
   "/ruxx-prepaid": {
     title: "Ruxx Prepaid — Airtime, Data, TV, Electricity Top-Ups | Ruxx Digital Services",
-    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals.",
+    description: "Automate airtime, data, TV and electricity top-ups with Ruxx Auto-Pay. Set your schedule and limits, confirm with your PIN, and never miss a payment again.",
     canonical: `${SITE_URL}/ruxx-prepaid`,
   },
   "/ruxx-stream": {
@@ -23,7 +23,7 @@ const pageSEO = {
   // Legacy slugs — keep working, but point search engines at the new URLs
   "/ruxxpay": {
     title: "Ruxx Prepaid — Airtime, Data, TV, Electricity Top-Ups | Ruxx Digital Services",
-    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals.",
+    description: "Automate airtime, data, TV and electricity top-ups with Ruxx Auto-Pay. Set your schedule and limits, confirm with your PIN, and never miss a payment again.",
     canonical: `${SITE_URL}/ruxx-prepaid`,
   },
   "/ruxx-swap": {

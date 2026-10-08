@@ -7,6 +7,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import SEO from "@/lib/seo";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
+import { ComingSoonProvider } from "@/components/ComingSoon";
+import AdPopup from "@/components/AdPopup";
 
 const Home = lazy(() => import("@/pages/Home"));
 const RuxxPrepaid = lazy(() => import("@/pages/RuxxPrepaid"));
@@ -32,41 +34,44 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "var(--background)", color: "var(--foreground)" }}>
-      <ScrollToTop />
-      <SEO path={location.pathname} />
-      <Navbar />
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg">
-        Skip to content
-      </a>
-      <main id="main-content" className="flex-1">
-        <ErrorBoundary>
-          <Suspense fallback={<PageLoader />}>
-            <AnimatePresence mode="wait">
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/ruxx-prepaid" element={<RuxxPrepaid />} />
-                <Route path="/ruxx-stream" element={<RuxxStream />} />
-                {/* Legacy aliases — redirect so old links keep working but only the
-                    canonical URLs (/ruxx-prepaid, /ruxx-stream) ever get indexed */}
-                <Route path="/ruxxpay" element={<Navigate to="/ruxx-prepaid" replace />} />
-                <Route path="/ruxx-swap" element={<Navigate to="/ruxx-stream" replace />} />
-                <Route path="/ruxx-card" element={<Navigate to="/ruxx-stream" replace />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/paystack" element={<Paystack />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </AnimatePresence>
-          </Suspense>
-        </ErrorBoundary>
-      </main>
-      <Footer />
-      <CookieConsent />
-    </div>
+    <ComingSoonProvider>
+      <div className="min-h-screen flex flex-col" style={{ background: "var(--background)", color: "var(--foreground)" }}>
+        <ScrollToTop />
+        <SEO path={location.pathname} />
+        <Navbar />
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg">
+          Skip to content
+        </a>
+        <main id="main-content" className="flex-1">
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/ruxx-prepaid" element={<RuxxPrepaid />} />
+                  <Route path="/ruxx-stream" element={<RuxxStream />} />
+                  {/* Legacy aliases — redirect so old links keep working but only the
+                      canonical URLs (/ruxx-prepaid, /ruxx-stream) ever get indexed */}
+                  <Route path="/ruxxpay" element={<Navigate to="/ruxx-prepaid" replace />} />
+                  <Route path="/ruxx-swap" element={<Navigate to="/ruxx-stream" replace />} />
+                  <Route path="/ruxx-card" element={<Navigate to="/ruxx-stream" replace />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/paystack" element={<Paystack />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </AnimatePresence>
+            </Suspense>
+          </ErrorBoundary>
+        </main>
+        <Footer />
+        <CookieConsent />
+        <AdPopup />
+      </div>
+    </ComingSoonProvider>
   );
 }

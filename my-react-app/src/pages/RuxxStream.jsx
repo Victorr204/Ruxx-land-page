@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Film, Smartphone, Play, Check, ChevronDown, Wifi, Globe, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { AppDownloadButton } from "@/components/ComingSoon";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -53,10 +54,9 @@ export default function RuxxStream() {
               Stream movies in Nigeria — Nollywood favourites, Hollywood blockbusters and more, in HD on any device.
             </p>
             <div className="flex flex-wrap gap-3 mt-8 justify-center">
-              <a href="https://play.google.com/store/apps/details?id=com.ruxx.pay" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl text-sm font-bold hover:opacity-90 transition-all">
+              <AppDownloadButton store="android" className="px-7 py-3.5">
                 <Play className="w-4 h-4" /> Start streaming
-              </a>
+              </AppDownloadButton>
               <Link to="/contact"
                 className="inline-flex items-center gap-2 border px-7 py-3.5 rounded-xl text-sm font-medium transition-all hover:bg-muted"
                 style={{ borderColor: "var(--border)", color: "var(--foreground)" }}>
@@ -190,15 +190,12 @@ export default function RuxxStream() {
               Movie night <span className="gradient-text">starts now.</span>
             </h2>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
-              <a href="https://play.google.com/store/apps/details?id=com.ruxx.pay" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 md:px-8 py-3 md:py-3.5 rounded-xl text-sm font-bold hover:opacity-90 transition-all">
+              <AppDownloadButton store="android" className="px-5 md:px-8 py-3 md:py-3.5">
                 <Smartphone className="w-4 h-4" /> Download for Android
-              </a>
-              <a href="https://apps.apple.com/app/id6738738145" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border px-5 md:px-8 py-3 md:py-3.5 rounded-xl text-sm font-medium transition-all hover:bg-muted"
-                style={{ borderColor: "var(--border)", color: "var(--foreground)" }}>
+              </AppDownloadButton>
+              <AppDownloadButton store="ios" variant="outline" className="px-5 md:px-8 py-3 md:py-3.5" style={{ borderColor: "var(--border)", color: "var(--foreground)" }}>
                 <Smartphone className="w-4 h-4" /> Download for iOS
-              </a>
+              </AppDownloadButton>
             </div>
             <p className="mt-6 text-[13px] text-muted-foreground">
               <Check className="w-3.5 h-3.5 inline-block mr-1 text-gold" />
