@@ -34,7 +34,7 @@ const SOURCES = [
 const FINTECH_KEYWORDS = [
   "fintech", "payment", "mobile money", "banking", "digital payment",
   "airtime", "data bundle", "recharge", "electricity", "power",
-  "gift card", "card trading", "buy gift card", "sell gift card",
+  "streaming", "movies", "Nollywood", "watch online",
   "naira", "currency", "exchange rate", "dollar", "forex",
   "crypto", "bitcoin", "blockchain", "web3",
   "betting", "sports betting", "bet9ja", "sportybet",
@@ -62,7 +62,7 @@ const FINTECH统计数据 = [
   "Nigeria's broadband penetration reached 48% in 2025",
   "Over 60% of Nigerians aged 18-35 now prefer digital payment methods",
   "The average Nigerian completes 3.2 digital transactions per week",
-  "Gift card trading volume in Nigeria grew by 85% in the past year",
+  "Video streaming adoption in Nigeria grew by 60% in the past year",
   "Electricity token purchases via mobile apps increased by 200% since 2024",
 ];
 

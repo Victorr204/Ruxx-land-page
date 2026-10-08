@@ -10,7 +10,7 @@ import CookieConsent from "@/components/CookieConsent";
 
 const Home = lazy(() => import("@/pages/Home"));
 const RuxxPrepaid = lazy(() => import("@/pages/RuxxPrepaid"));
-const RuxxSwap = lazy(() => import("@/pages/RuxxSwap"));
+const RuxxStream = lazy(() => import("@/pages/RuxxStream"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Terms = lazy(() => import("@/pages/Terms"));
@@ -46,11 +46,12 @@ export default function App() {
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/ruxx-prepaid" element={<RuxxPrepaid />} />
-                <Route path="/ruxx-swap" element={<RuxxSwap />} />
+                <Route path="/ruxx-stream" element={<RuxxStream />} />
                 {/* Legacy aliases — redirect so old links keep working but only the
-                    canonical URLs (/ruxx-prepaid, /ruxx-swap) ever get indexed */}
+                    canonical URLs (/ruxx-prepaid, /ruxx-stream) ever get indexed */}
                 <Route path="/ruxxpay" element={<Navigate to="/ruxx-prepaid" replace />} />
-                <Route path="/ruxx-card" element={<Navigate to="/ruxx-swap" replace />} />
+                <Route path="/ruxx-swap" element={<Navigate to="/ruxx-stream" replace />} />
+                <Route path="/ruxx-card" element={<Navigate to="/ruxx-stream" replace />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/terms" element={<Terms />} />

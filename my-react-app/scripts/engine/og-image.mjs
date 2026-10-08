@@ -35,11 +35,6 @@ const THEMES = {
     accent: "#f0abfc",
     icon: "📘",
   },
-  "Gift Cards": {
-    gradient: ["#d97706", "#ea580c"],
-    accent: "#fbbf24",
-    icon: "🎁",
-  },
   Technology: {
     gradient: ["#2563eb", "#7c3aed"],
     accent: "#60a5fa",

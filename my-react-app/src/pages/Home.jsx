@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Smartphone, CreditCard, ShieldCheck, Zap, BadgeDollarSign,
+  Smartphone, Film, ShieldCheck, Zap, BadgeDollarSign,
   Headphones, ArrowRight, ChevronDown, Wifi, Tv, Bolt,
   CheckCircle2, Star, Users, TrendingUp, Globe,
 } from "lucide-react";
@@ -24,9 +24,9 @@ const fadeUp = {
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
 const faqs = [
-  { q: "What is Ruxx Digital Services?", a: "Ruxx Digital Services is a utility aggregation and value-added services platform built for Nigerians. We offer two core products — Ruxx Prepaid for airtime, data, electricity and cable TV top-ups, and Ruxx Swap for gift card trading." },
+  { q: "What is Ruxx Digital Services?", a: "Ruxx Digital Services is a utility aggregation and value-added services platform built for Nigerians. We offer two core products — Ruxx Prepaid for airtime, data, electricity and cable TV top-ups, and Ruxx Stream for streaming movies." },
   { q: "Is Ruxx Prepaid a bank or wallet app?", a: "No. ruxx prepaid is not a bank, Mobile Money Operator, or deposit-taking institution. It is a closed-loop utility credit platform: balances can be spent inside the app but cannot be withdrawn or transferred out. Payments are collected by Paystack under its CBN-licensed gateway." },
-  { q: "What fees does Ruxx charge?", a: "Fees vary by product. Ruxx Prepaid charges a flat 1.5% on balance top-ups. Ruxx Swap offers competitive gift card rates updated daily. No hidden charges on either platform." },
+  { q: "What fees does Ruxx charge?", a: "Ruxx Prepaid charges a flat 1.5% on balance top-ups. Ruxx Stream is included with your account. No hidden charges on either platform." },
   { q: "How do I get started?", a: "Download the app from Google Play or App Store, create an account, and top up your prepaid balance. You can start using any of our services immediately." },
   { q: "How do I contact support?", a: "Reach us 24/7 via email at info@ruxxdigital.name.ng or through our in-app support chat." },
 ];
@@ -35,12 +35,12 @@ const marquee = [
   { icon: <Wifi className="w-4 h-4" />, text: "Airtime & Data" },
   { icon: <Tv className="w-4 h-4" />, text: "TV Subscriptions" },
   { icon: <Bolt className="w-4 h-4" />, text: "Electricity" },
-  { icon: <CreditCard className="w-4 h-4" />, text: "Gift Cards" },
+  { icon: <Film className="w-4 h-4" />, text: "Movies" },
   { icon: <Smartphone className="w-4 h-4" />, text: "Betting" },
   { icon: <Wifi className="w-4 h-4" />, text: "Airtime & Data" },
   { icon: <Tv className="w-4 h-4" />, text: "TV Subscriptions" },
   { icon: <Bolt className="w-4 h-4" />, text: "Electricity" },
-  { icon: <CreditCard className="w-4 h-4" />, text: "Gift Cards" },
+  { icon: <Film className="w-4 h-4" />, text: "Movies" },
   { icon: <Smartphone className="w-4 h-4" />, text: "Betting" },
 ];
 
@@ -87,7 +87,7 @@ export default function Home() {
                 <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 8px rgba(34,197,94,0.5)" }} />
                 <span className="text-sm font-bold" style={{ color: "var(--primary)", letterSpacing: "0.02em" }}>Ruxx Digital Services</span>
                 <span style={{ color: "var(--muted-foreground)", fontSize: "12px" }}>—</span>
-                <span className="text-[12px] font-medium" style={{ color: "var(--muted-foreground)" }}>A subsidiary of Kognatix Ltd</span>
+                <span className="text-[12px] font-medium" style={{ color: "var(--muted-foreground)" }}>Pay bills. Watch movies.</span>
               </div>
             </motion.div>
 
@@ -107,7 +107,7 @@ export default function Home() {
               style={{ maxWidth: "28rem", marginTop: "1.5rem", lineHeight: 1.65, fontSize: "1rem" }}
             >
               Your all-in-one utility and bill payment hub. Buy airtime, data, electricity
-              tokens and cable TV — plus trade gift cards — fast, secure, and at the best rates in Nigeria.
+              and cable TV — then stream movies — fast, secure, and at the best rates in Nigeria.
             </motion.p>
 
             <motion.div variants={fadeUp} custom={3} className="flex flex-wrap justify-center" style={{ gap: "0.75rem", marginTop: "2rem" }}>
@@ -119,11 +119,11 @@ export default function Home() {
                 Explore Ruxx Prepaid <ArrowRight style={{ width: "16px", height: "16px" }} />
               </Link>
               <Link
-                to="/ruxx-swap"
+                to="/ruxx-stream"
                 className="inline-flex items-center gap-2 rounded-xl text-sm font-medium transition-all hover:bg-muted"
                 style={{ padding: "0.875rem 1.75rem", border: "1px solid var(--border)", color: "var(--foreground)" }}
               >
-                Explore Ruxx Swap
+                Explore Ruxx Stream
               </Link>
             </motion.div>
 
@@ -217,21 +217,21 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Ruxx Swap */}
+            {/* Ruxx Stream */}
             <motion.div variants={fadeUp} custom={1}>
-              <Link to="/ruxx-swap" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
+              <Link to="/ruxx-stream" className="block rounded-3xl p-5 md:p-8 lg:p-10 border card-hover group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: "rgba(245,158,11,0.1)" }}>
-                  <CreditCard className="w-7 h-7 text-gold" />
+                  <Film className="w-7 h-7 text-gold" />
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full mb-4" style={{ padding: "0.25rem 0.625rem", background: "rgba(245,158,11,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Swap</span>
+                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Stream</span>
                 </div>
-                <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Trade gift cards at the best rates.</h3>
+                <h3 className="text-2xl font-black text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>Stream movies in HD.</h3>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
-                  Buy and sell gift cards from Apple, Amazon, Google, and more. Instant transactions, competitive rates.
+                  Nollywood favourites, Hollywood blockbusters and more — watch instantly on any device, download for offline.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {["Apple", "Amazon", "Google Play", "Steam"].map((tag) => (
+                  {["Nollywood", "Hollywood", "Action", "Comedy"].map((tag) => (
                     <span key={tag} className="text-[11px] font-medium rounded-full px-2.5 py-0.5" style={{ background: "rgba(245,158,11,0.06)", color: "var(--gold)" }}>{tag}</span>
                   ))}
                 </div>
@@ -290,21 +290,21 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Ruxx Swap side */}
+            {/* Ruxx Stream side */}
             <motion.div variants={fadeUp} custom={1}>
-              <Link to="/ruxx-swap" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+              <Link to="/ruxx-stream" className="block rounded-3xl p-8 border transition-all group" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(245,158,11,0.3)"}
                 onMouseOut={(e) => e.currentTarget.style.borderColor = "var(--card-border)"}
               >
                 <div className="inline-flex items-center gap-2 rounded-full mb-5" style={{ padding: "0.25rem 0.625rem", background: "rgba(245,158,11,0.08)" }}>
-                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Swap</span>
+                  <span className="text-[10px] font-semibold text-gold tracking-wide">Ruxx Stream</span>
                 </div>
-                <h3 className="text-xl font-black text-foreground mb-4">Trade cards in 3 steps</h3>
+                <h3 className="text-xl font-black text-foreground mb-4">Stream a movie in 3 steps</h3>
                 <div className="space-y-4">
                   {[
-                    { step: "1", title: "Submit your card", desc: "Enter card details and get an instant rate estimate." },
-                    { step: "2", title: "Confirm the trade", desc: "Accept the rate. Send your gift card securely." },
-                    { step: "3", title: "Get credited instantly", desc: "Naira credit lands in your Ruxx Swap balance the moment the card is verified." },
+                    { step: "1", title: "Sign in", desc: "Use the same account you already use for Ruxx Prepaid." },
+                    { step: "2", title: "Pick a movie", desc: "Browse Nollywood, Hollywood and every genre in between." },
+                    { step: "3", title: "Press play", desc: "Streaming starts instantly in HD — download it for offline later." },
                   ].map((s, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(245,158,11,0.1)" }}>
@@ -318,7 +318,7 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="inline-flex items-center gap-2 text-gold font-semibold text-sm mt-6 group-hover:gap-3 transition-all">
-                  Explore Ruxx Swap <ArrowRight className="w-4 h-4" />
+                  Explore Ruxx Stream <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
             </motion.div>

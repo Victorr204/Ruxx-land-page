@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CreditCard, Smartphone, ShieldCheck, Zap, TrendingUp, ArrowRight, Check, ChevronDown } from "lucide-react";
+import { Film, Smartphone, Play, Check, ChevronDown, Wifi, Globe, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -9,15 +9,16 @@ const fadeUp = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
-export default function RuxxSwap() {
+export default function RuxxStream() {
   const [faqOpen, setFaqOpen] = useState(null);
-  const brands = ["Apple", "Amazon", "Google Play", "Steam", "Netflix", "Spotify", "eBay", "PlayStation", "Xbox", "Visa", "Mastercard", "Vanilla"];
+  const categories = ["Nollywood", "Hollywood", "Action", "Comedy", "Drama", "Romance", "Thriller", "Sci-Fi", "Documentaries", "Kids & Family", "Anime", "Classic Cinema"];
 
   const faqs = [
-    { q: "How do I sell a gift card?", a: "Select the card brand, enter the card details, and confirm. Payment is credited to your Ruxx Swap balance within minutes." },
-    { q: "Where does my money go?", a: "Proceeds are credited to your in-app prepaid balance, which you can spend on airtime, data, electricity, TV and other services. Balances cannot be withdrawn to a bank account." },
-    { q: "What rates do you offer?", a: "Rates are updated daily and displayed in the app before you confirm any transaction." },
-    { q: "Which gift cards do you accept?", a: "We support Apple, Amazon, Google Play, Steam, Netflix, Spotify, eBay, PlayStation, Xbox, Visa, Mastercard, and Vanilla." },
+    { q: "What is Ruxx Stream?", a: "Ruxx Stream is the movie streaming service from Ruxx Digital Services — watch Nollywood blockbusters, Hollywood hits and more, straight from your phone or laptop." },
+    { q: "Where do I watch?", a: "Open Ruxx Stream inside the Ruxx app or on the web. Your library follows your account, so you can pick up on any device where you left off." },
+    { q: "Do I need a separate subscription?", a: "No. Stream with the same account you use for Ruxx Prepaid — one login, one balance, no extra sign-up." },
+    { q: "Can I download movies to watch offline?", a: "Yes. Download titles while you are on Wi-Fi and watch them later without using data." },
+    { q: "What quality can I stream in?", a: "Titles stream in HD and, where available, 4K. Playback adapts automatically to your connection so it never stalls." },
   ];
 
   return (
@@ -41,41 +42,46 @@ export default function RuxxSwap() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div variants={fadeUp}>
             <div className="inline-flex items-center gap-2 bg-gold/10 rounded-full px-3.5 py-1.5 mb-6 border border-gold/20">
-              <CreditCard className="w-3.5 h-3.5 text-gold" />
-              <span className="text-[11px] font-semibold text-gold tracking-wide">Ruxx Swap</span>
+              <Film className="w-3.5 h-3.5 text-gold" />
+              <span className="text-[11px] font-semibold text-gold tracking-wide">Ruxx Stream</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tracking-tight leading-tight">
-              Buy. Sell.<br />
-              <span className="gradient-text">Earn more.</span>
+              Watch. Relax.<br />
+              <span className="gradient-text">Repeat.</span>
             </h1>
             <p className="mt-6 text-muted-foreground max-w-md mx-auto leading-relaxed">
-              Trade gift cards at the best rates in Nigeria. Instant credit to your prepaid balance, secure settlement.
+              Stream movies in Nigeria — Nollywood favourites, Hollywood blockbusters and more, in HD on any device.
             </p>
             <div className="flex flex-wrap gap-3 mt-8 justify-center">
               <a href="https://play.google.com/store/apps/details?id=com.ruxx.pay" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl text-sm font-bold hover:opacity-90 transition-all">
-                <Smartphone className="w-4 h-4" /> Get Ruxx Swap
+                <Play className="w-4 h-4" /> Start streaming
               </a>
+              <Link to="/contact"
+                className="inline-flex items-center gap-2 border px-7 py-3.5 rounded-xl text-sm font-medium transition-all hover:bg-muted"
+                style={{ borderColor: "var(--border)", color: "var(--foreground)" }}>
+                <Smartphone className="w-4 h-4" /> Get the app
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* BRANDS GRID */}
+      {/* CATEGORIES GRID */}
       <section className="py-12 md:py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
-              Supported <span className="gradient-text">brands</span>
+              Something for <span className="gradient-text">every mood</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-            {brands.map((brand, i) => (
+            {categories.map((category, i) => (
               <motion.div key={i} variants={fadeUp} custom={i}
                 className="rounded-xl p-4 text-center border transition-colors hover:border-gold/30"
                 style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
-                <CreditCard className="w-5 h-5 text-muted-foreground/50 mx-auto mb-2" />
-                <span className="text-[12px] text-muted-foreground font-medium">{brand}</span>
+                <Film className="w-5 h-5 text-muted-foreground/50 mx-auto mb-2" />
+                <span className="text-[12px] text-muted-foreground font-medium">{category}</span>
               </motion.div>
             ))}
           </div>
@@ -87,15 +93,15 @@ export default function RuxxSwap() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
-              Three steps. <span className="gradient-text">Done.</span>
+              Three steps. <span className="gradient-text">Movie night.</span>
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-4 md:gap-8 relative">
             <div className="absolute top-8 left-[20%] right-[20%] h-px hidden md:block" style={{ background: "var(--border)" }} />
             {[
-              { num: "01", title: "Choose your card", desc: "Select the brand and amount." },
-              { num: "02", title: "Confirm details", desc: "Review the rate before confirming." },
-              { num: "03", title: "Get credited", desc: "Your prepaid balance updates instantly." },
+              { num: "01", title: "Open Ruxx Stream", desc: "Sign in with your Ruxx account." },
+              { num: "02", title: "Pick a movie", desc: "Browse by genre, mood or release." },
+              { num: "03", title: "Press play", desc: "Streaming starts instantly in HD." },
             ].map((step, i) => (
               <motion.div key={i} variants={fadeUp} custom={i} className="text-center relative">
                 <div className="text-4xl md:text-5xl font-black text-gold/20 mb-4">{step.num}</div>
@@ -113,24 +119,29 @@ export default function RuxxSwap() {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <motion.div variants={fadeUp}>
               <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">
-                Why users choose <span className="gradient-text">Ruxx Swap.</span>
+                Why viewers choose <span className="gradient-text">Ruxx Stream.</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Best rates with instant balance credit and a seamless trading experience.
+                Crisp playback, a growing library and no juggling subscriptions — movies the way they should be.
               </p>
               <div className="space-y-3">
-                {["Best rates updated daily", "Instant credit within minutes", "Secure encrypted transactions"].map((text, i) => (
+                {[
+                  { icon: <Play className="w-4 h-4 text-gold shrink-0" />, text: "HD and 4K where available" },
+                  { icon: <Download className="w-4 h-4 text-gold shrink-0" />, text: "Download for offline viewing" },
+                  { icon: <Wifi className="w-4 h-4 text-gold shrink-0" />, text: "Adaptive streaming on any connection" },
+                  { icon: <Globe className="w-4 h-4 text-gold shrink-0" />, text: "Your library follows your account" },
+                ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Check className="w-4 h-4 text-gold shrink-0" /> {text}
+                    {item.icon} {item.text}
                   </div>
                 ))}
               </div>
             </motion.div>
             <motion.div variants={fadeUp} custom={1} className="grid grid-cols-3 gap-3">
               {[
-                { val: "12+", label: "Brands" },
-                { val: "< 5m", label: "Credit" },
-                { val: "#1", label: "Rates" },
+                { val: "1,000+", label: "Titles" },
+                { val: "HD", label: "Quality" },
+                { val: "0", label: "Ads" },
               ].map((stat, i) => (
                 <div key={i} className="rounded-2xl p-5 text-center border" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
                   <div className="text-2xl font-black text-gold">{stat.val}</div>
@@ -155,12 +166,12 @@ export default function RuxxSwap() {
             {faqs.map((faq, i) => (
               <motion.div key={i} variants={fadeUp} custom={i}>
                 <div className="rounded-xl border overflow-hidden" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
-                   <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={faqOpen === i} aria-controls={`ruxxswap-faq-${i}`}>
+                   <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} className="w-full flex items-center justify-between px-6 py-4 text-left" aria-expanded={faqOpen === i} aria-controls={`ruxxstream-faq-${i}`}>
                     <span className="text-sm font-semibold text-foreground pr-4">{faq.q}</span>
                     <ChevronDown className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform ${faqOpen === i ? "rotate-180" : ""}`} />
                   </button>
                   {faqOpen === i && (
-                    <div id={`ruxxswap-faq-${i}`} role="region" className="px-6 pb-4 text-[13px] text-muted-foreground leading-relaxed border-t pt-3" style={{ borderColor: "var(--border)" }}>
+                    <div id={`ruxxstream-faq-${i}`} role="region" className="px-6 pb-4 text-[13px] text-muted-foreground leading-relaxed border-t pt-3" style={{ borderColor: "var(--border)" }}>
                       {faq.a}
                     </div>
                   )}
@@ -176,7 +187,7 @@ export default function RuxxSwap() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground tracking-tight leading-tight">
-              Start trading <span className="gradient-text">gift cards today.</span>
+              Movie night <span className="gradient-text">starts now.</span>
             </h2>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
               <a href="https://play.google.com/store/apps/details?id=com.ruxx.pay" target="_blank" rel="noopener noreferrer"
@@ -189,6 +200,10 @@ export default function RuxxSwap() {
                 <Smartphone className="w-4 h-4" /> Download for iOS
               </a>
             </div>
+            <p className="mt-6 text-[13px] text-muted-foreground">
+              <Check className="w-3.5 h-3.5 inline-block mr-1 text-gold" />
+              One account for Ruxx Stream and Ruxx Prepaid.
+            </p>
           </motion.div>
         </div>
       </section>

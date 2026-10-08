@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, ShieldCheck, Zap, Award, Users, TrendingUp, User } from "lucide-react";
+import { Target, Eye, Heart, ShieldCheck, Zap, Award, User } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import RegulatoryNotice from "@/components/RegulatoryNotice";
 
@@ -36,7 +36,7 @@ export default function About() {
               <span className="gradient-text">easier to pay.</span>
             </h1>
             <p className="mt-6 text-muted-foreground max-w-lg mx-auto leading-relaxed">
-              A subsidiary of Kognatix Ltd, on a mission to make airtime, data, electricity and
+              On a mission to make airtime, data, electricity and
               cable TV top-ups accessible, fast, and secure for everyone.
             </p>
           </motion.div>
@@ -52,14 +52,14 @@ export default function About() {
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Ruxx Digital Services was born from a simple observation: paying everyday
-                  bills in Nigeria should be easier, faster, and more accessible. Founded under
-                  the umbrella of Kognatix Ltd, we set out to build a platform that would
+                  bills in Nigeria should be easier, faster, and more accessible. Founded in
+                  Nigeria, we set out to build a platform that would
                   eliminate the friction in everyday utility purchases.
                 </p>
                 <p>
                   What started as a vision to simplify airtime purchases has grown into a
                   complete utility aggregation platform — covering airtime, data, TV
-                  subscriptions, electricity bills, betting facilitation, and gift card trading.
+                  subscriptions, electricity bills, betting facilitation, and movie streaming.
                 </p>
                 <p>
                   Today, Ruxx Digital Services powers thousands of top-ups daily,
@@ -88,12 +88,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* FOUNDER + PARENT COMPANY */}
+      {/* FOUNDER */}
       <section className="py-12 md:py-20 lg:py-28" style={{ background: "var(--section-alt)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Founder */}
-            <motion.div variants={fadeUp} className="text-center md:text-left">
+          <div className="max-w-3xl mx-auto">
+            <motion.div variants={fadeUp} className="text-center">
               <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3.5 py-1.5 mb-6 border border-primary/20">
                 <User className="w-3.5 h-3.5 text-primary" />
                 <span className="text-[11px] font-semibold text-primary tracking-wide">Founder</span>
@@ -102,34 +101,16 @@ export default function About() {
                 Victor Chidiebere <span className="gradient-text">Ruben</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Victor Chidiebere Ruben is the founder of Ruxx Digital Services, a subsidiary
-                of Kognatix Ltd. With a passion for consumer technology and a vision to
-                simplify everyday bill payments across Nigeria, Victor established Ruxx to put
-                airtime, data, power and entertainment in one mobile-first app.
+                Victor Chidiebere Ruben is the founder of Ruxx Digital Services. With a passion
+                for consumer technology and a vision to simplify everyday bill payments across
+                Nigeria, Victor established Ruxx to put airtime, data, power and entertainment
+                in one mobile-first app.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Under his leadership, Ruxx has grown into a trusted platform serving thousands
                 of users daily for airtime, data, TV subscriptions, electricity bills, and
-                gift card trading.
+                movie streaming.
               </p>
-            </motion.div>
-
-            {/* Parent Company */}
-            <motion.div variants={fadeUp} custom={1}>
-              <div className="rounded-3xl p-8 border text-center" style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}>
-                <div className="inline-flex items-center gap-2 bg-gold/10 rounded-full px-3.5 py-1.5 mb-6 border border-gold/20">
-                  <Users className="w-3.5 h-3.5 text-gold" />
-                  <span className="text-[11px] font-semibold text-gold tracking-wide">Parent Company</span>
-                </div>
-                <h3 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
-                  <span className="gradient-text">Kognatix</span> Ltd
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Kognatix Ltd is the parent company behind Ruxx Digital Services. With a
-                  vision to drive digital transformation across Africa, Kognatix invests in
-                  innovative technology solutions that empower individuals and businesses.
-                </p>
-              </div>
             </motion.div>
           </div>
         </div>

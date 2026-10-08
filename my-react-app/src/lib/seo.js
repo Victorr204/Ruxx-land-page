@@ -7,18 +7,18 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 const pageSEO = {
   "/": {
     title: "Ruxx Digital Services — Airtime, Data, Electricity & Cable TV Top-Ups",
-    description: "Ruxx Digital Services is a utility and bill payment app. Instantly buy airtime, data, electricity tokens and TV subscriptions, and trade retail gift cards. A subsidiary of Kognatix Ltd.",
+    description: "Ruxx Digital Services is a utility and bill payment app. Instantly buy airtime, data, electricity tokens and TV subscriptions, and stream movies with Ruxx Stream.",
     canonical: `${SITE_URL}/`,
   },
   "/ruxx-prepaid": {
     title: "Ruxx Prepaid — Airtime, Data, TV, Electricity Top-Ups | Ruxx Digital Services",
-    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals. A subsidiary of Kognatix Ltd.",
+    description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals.",
     canonical: `${SITE_URL}/ruxx-prepaid`,
   },
-  "/ruxx-swap": {
-    title: "Ruxx Swap — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
-    description: "Trade retail gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly, with credit added to your prepaid balance.",
-    canonical: `${SITE_URL}/ruxx-swap`,
+  "/ruxx-stream": {
+    title: "Ruxx Stream — Stream Movies in Nigeria | Ruxx Digital Services",
+    description: "Stream Nollywood favourites, Hollywood blockbusters and more in HD with Ruxx Stream. Watch on any device and download for offline viewing.",
+    canonical: `${SITE_URL}/ruxx-stream`,
   },
   // Legacy slugs — keep working, but point search engines at the new URLs
   "/ruxxpay": {
@@ -26,14 +26,19 @@ const pageSEO = {
     description: "Top up airtime, data, TV subscriptions and electricity instantly with Ruxx Prepaid. A closed-loop utility credit platform — pay and use, no withdrawals.",
     canonical: `${SITE_URL}/ruxx-prepaid`,
   },
+  "/ruxx-swap": {
+    title: "Ruxx Stream — Stream Movies in Nigeria | Ruxx Digital Services",
+    description: "Stream Nollywood favourites, Hollywood blockbusters and more in HD with Ruxx Stream.",
+    canonical: `${SITE_URL}/ruxx-stream`,
+  },
   "/ruxx-card": {
-    title: "Ruxx Swap — Buy & Sell Gift Cards at Best Rates | Ruxx Digital Services",
-    description: "Trade gift cards at the best rates in Nigeria. Buy and sell Amazon, iTunes, Google Play and other gift cards instantly.",
-    canonical: `${SITE_URL}/ruxx-swap`,
+    title: "Ruxx Stream — Stream Movies in Nigeria | Ruxx Digital Services",
+    description: "Stream Nollywood favourites, Hollywood blockbusters and more in HD with Ruxx Stream.",
+    canonical: `${SITE_URL}/ruxx-stream`,
   },
   "/about": {
     title: "About Us — Victor Chidiebere Ruben, Founder | Ruxx Digital Services",
-    description: "Learn about Ruxx Digital Services, a value-added services reseller and utility aggregation platform founded by Victor Chidiebere Ruben. A subsidiary of Kognatix Ltd.",
+    description: "Learn about Ruxx Digital Services, a value-added services reseller and utility aggregation platform founded by Victor Chidiebere Ruben.",
     canonical: `${SITE_URL}/about`,
   },
   "/contact": {
@@ -57,8 +62,8 @@ const pageSEO = {
     canonical: `${SITE_URL}/privacy`,
   },
   "/blog": {
-    title: "Blog — Guides on Airtime, Data, Bills & Gift Cards | Ruxx Digital Services",
-    description: "Practical guides on airtime, data, electricity tokens, cable TV subscriptions, gift card trading and staying safe online in Nigeria.",
+    title: "Blog — Guides on Airtime, Data, Bills & Streaming | Ruxx Digital Services",
+    description: "Practical guides on airtime, data, electricity tokens, cable TV subscriptions, movie streaming and staying safe online in Nigeria.",
     canonical: `${SITE_URL}/blog`,
   },
 };

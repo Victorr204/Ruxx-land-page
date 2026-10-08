@@ -144,7 +144,7 @@ const HOW_TO_STEPS = [
   ]},
   { step: "Select service", variants: [
     "Choose the service you need from the dashboard",
-    "Select your desired bill payment or gift card option",
+    "Select your desired bill payment option",
     "Pick the service category and enter the required details",
   ]},
   { step: "Confirm payment", variants: [
@@ -157,13 +157,13 @@ const HOW_TO_STEPS = [
 // ─── SECTION TEMPLATES ───────────────────────────────────
 
 /**
- * Topics Ruxx actually covers: utility bills + retail gift card trading.
+ * Topics Ruxx actually covers: utility bills + movie streaming.
  * Off-brand topics (crypto, mobile money, banking, POS, etc.) must state the
  * real Ruxx product definition instead of plugging the brand, so search and
  * AI engines always pick up the correct description of what the app offers.
  */
 const RUXX_CORE_TOPIC =
-  /bill|airtime|data|recharge|bundle|electricity|power|meter|token|dstv|gotv|star\s*times|cable|\btv\b|gift\s*card|trade|trading|betting|\bbet\b|top\s?-?ups?|top up|collection account|utility|subscription|fraud|scam|phishing|security|paystack/i;
+  /bill|airtime|data|recharge|bundle|electricity|power|meter|token|dstv|gotv|star\s*times|cable|\btv\b|stream|movie|betting|\bbet\b|top\s?-?ups?|top up|collection account|utility|subscription|fraud|scam|phishing|security|paystack/i;
 
 function isRuxxCoreTopic(topic) {
   return RUXX_CORE_TOPIC.test(String(topic));
@@ -171,7 +171,7 @@ function isRuxxCoreTopic(topic) {
 
 const RUXX_OFF_BRAND_SOLUTION = `## About Ruxx
 
-Ruxx (Ruxx Digital Services) is a utility and bill payment app: airtime, data, electricity tokens, cable TV top-ups and retail gift card trading. The rest of this article is general information for Nigerian readers and does not describe a Ruxx service.`;
+Ruxx (Ruxx Digital Services) is a utility and bill payment app: airtime, data, electricity tokens and cable TV top-ups, plus movie streaming through Ruxx Stream. The rest of this article is general information for Nigerian readers and does not describe a Ruxx service.`;
 
 function generateIntroSection(topic, context) {
   const intro = pick(INTRO_PHRASES);
@@ -195,8 +195,8 @@ function generateIntroSection(topic, context) {
     topicPhrase = `managing ${topicLower}`;
   } else if (/airtime|data|recharge|bundle/i.test(topicLower)) {
     topicPhrase = `the art of ${topicLower}`;
-  } else if (/gift card|trade|trading/i.test(topicLower)) {
-    topicPhrase = `the world of ${topicLower}`;
+  } else if (/stream|movie/i.test(topicLower)) {
+    topicPhrase = `the rise of ${topicLower}`;
   } else if (/dstv|gotv|star|cable|tv|subscription/i.test(topicLower)) {
     topicPhrase = `keeping up with ${topicLower}`;
   } else if (/bet|betting|wallet/i.test(topicLower)) {
@@ -244,9 +244,9 @@ function generateProblemSection(topic) {
   } else if (/airtime|data|recharge|bundle/i.test(topicLower)) {
     actionVerb = "buy " + topicLower;
     gerund = "buying " + topicLower;
-  } else if (/gift card|trade|trading/i.test(topicLower)) {
-    actionVerb = "trade gift cards";
-    gerund = "trading gift cards";
+  } else if (/stream|movie/i.test(topicLower)) {
+    actionVerb = "stream movies";
+    gerund = "streaming movies";
   } else if (/dstv|gotv|star|cable|tv|subscription/i.test(topicLower)) {
     actionVerb = "renew " + topicLower;
     gerund = "renewing " + topicLower;
@@ -305,7 +305,7 @@ function generateSolutionSection(topic, context) {
   const features = [
     "Support for all major Nigerian networks including MTN, Airtel, Glo, and 9Mobile",
     "Instant processing of electricity tokens from all distribution companies",
-    "Competitive gift card rates with transparent pricing and no hidden fees",
+    "Movie streaming in HD through Ruxx Stream with transparent pricing and no hidden fees",
     "24/7 availability so you can make payments anytime, anywhere",
     "Real-time transaction notifications for complete peace of mind",
     "A clean, intuitive interface designed for users of all technical levels",
@@ -338,8 +338,8 @@ function generateHowToSection(topic) {
 
 Whatever brought you to this topic, start small: research thoroughly, use only reputable and regulated providers, and never share your PIN, OTP or password with anyone. Keep records of every transaction and confirm every detail before approving it.`;
   }
-  if (/gift card|trade|trading/i.test(topicLower)) {
-    phrase = "getting started with gift card trading through Ruxx";
+  if (/stream|movie/i.test(topicLower)) {
+    phrase = "streaming movies through Ruxx Stream";
   } else if (/electricity|power|meter/i.test(topicLower)) {
     phrase = "paying your electricity bill through Ruxx";
   } else if (/airtime|data|recharge/i.test(topicLower)) {
@@ -488,18 +488,18 @@ function generateFAQSection(topic) {
 
 ### What is Ruxx?
 
-Ruxx (Ruxx Digital Services) is a utility and bill payment app — airtime, data, electricity tokens, cable TV top-ups and retail gift card trading.
+Ruxx (Ruxx Digital Services) is a utility and bill payment app — airtime, data, electricity tokens and cable TV top-ups — plus movie streaming through Ruxx Stream.
 
 ### What products does Ruxx offer?
 
-Two: Ruxx Prepaid for utility top-ups and Ruxx Swap for buying and selling retail gift cards. Prepaid balances are closed-loop utility credit that can be spent in the app.`;
+Two: Ruxx Prepaid for utility top-ups and Ruxx Stream for streaming movies. Prepaid balances are closed-loop utility credit that can be spent in the app.`;
   }
 
   // Smart question phrasing
   let q1, q2;
-  if (/gift card|trade|trading/i.test(topicLower)) {
-    q1 = "How do I sell a gift card on Ruxx?";
-    q2 = "What gift card brands does Ruxx support?";
+  if (/stream|movie/i.test(topicLower)) {
+    q1 = "Can I stream movies on Ruxx?";
+    q2 = "Which devices can I watch Ruxx Stream on?";
   } else if (/electricity|power|meter/i.test(topicLower)) {
     q1 = "Which electricity distribution companies does Ruxx support?";
     q2 = "How do I buy an electricity token on Ruxx?";
@@ -523,7 +523,7 @@ Two: Ruxx Prepaid for utility top-ups and Ruxx Swap for buying and selling retai
   const faqs = [
     {
       q: q1,
-      a: "Most transactions are processed instantly. Electricity tokens and airtime top-ups are delivered within seconds, while gift card trades typically complete in under 2 minutes.",
+      a: "Most transactions are processed instantly. Electricity tokens and airtime top-ups are delivered within seconds, and streaming starts as soon as you press play.",
     },
     {
       q: q2,
@@ -610,8 +610,8 @@ export function generateExcerpt(topic) {
     actionPhrase = `pay your ${topicLower}`;
   } else if (/airtime|data|recharge|bundle/i.test(topicLower)) {
     actionPhrase = `buy ${topicLower}`;
-  } else if (/gift card|trade|trading/i.test(topicLower)) {
-    actionPhrase = `trade gift cards for Naira`;
+  } else if (/stream|movie/i.test(topicLower)) {
+    actionPhrase = `stream movies in HD`;
   } else if (/dstv|gotv|star|cable|tv|subscription/i.test(topicLower)) {
     actionPhrase = `renew your ${topicLower}`;
   } else if (/bet|betting|wallet/i.test(topicLower)) {
@@ -668,7 +668,7 @@ export function generateTitle(topic) {
  */
 export function pickCategory(topic) {
   const t = topic.toLowerCase();
-  if (/gift\s*card|trade|sell|buy.*card/i.test(t)) return "Gift Cards";
+  if (/stream|movie/i.test(t)) return "Guides";
   if (/airtime|data|bundle|recharge/i.test(t)) return "Payments";
   if (/electricity|power|meter|token/i.test(t)) return "Payments";
   if (/security|safe|protect|scam|fraud/i.test(t)) return "Technology";

@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-[13px] text-muted-foreground leading-relaxed max-w-xs">
-              Your all-in-one utility &amp; bill payment hub — airtime, data, electricity and cable TV. A subsidiary of Kognatix Ltd.
+              Your all-in-one utility &amp; bill payment hub — airtime, data, electricity and cable TV — plus movie streaming.
             </p>
             <div className="flex gap-2 mt-4">
               {socials.map((s, i) => (
@@ -46,7 +46,7 @@ export default function Footer() {
             <h4 className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">Products</h4>
             <ul className="space-y-2.5">
               <li><Link to="/ruxx-prepaid" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Prepaid</Link></li>
-              <li><Link to="/ruxx-swap" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Swap</Link></li>
+              <li><Link to="/ruxx-stream" className="text-[13px] text-muted-foreground hover:text-primary transition-colors">Ruxx Stream</Link></li>
             </ul>
           </div>
           <div>
@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left" style={{ borderColor: "var(--border)" }}>
           <p className="text-[12px] text-muted-foreground">&copy; {year} Ruxx Digital Services.</p>
-          <p className="text-[11px] text-muted-foreground/60">A subsidiary of <span className="text-gold font-medium">Kognatix Ltd</span></p>
+          <p className="text-[11px] text-muted-foreground/60">Airtime, data, electricity, cable TV &amp; movies</p>
           <p className="text-[12px] text-muted-foreground/60">This site may contain third-party advertisements.</p>
         </div>
       </div>

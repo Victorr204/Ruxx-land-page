@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Wifi, Tv, Zap, Gamepad2, CreditCard, ShieldCheck, Check, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Smartphone, Wifi, Tv, Zap, Gamepad2, ShieldCheck, Check, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -42,7 +42,6 @@ export default function RuxxPrepaid() {
     { icon: <Tv className="w-5 h-5" />, title: "TV Subscriptions", desc: "DStv, GOtv, StarTimes — subscribe directly from your phone in seconds." },
     { icon: <Zap className="w-5 h-5" />, title: "Electricity", desc: "Prepaid meter tokens for IKEDC, EKEDC, KEDCO, and all major distribution companies." },
     { icon: <Gamepad2 className="w-5 h-5" />, title: "Betting & Gaming", desc: "Top up Bet9ja, Sportybet, and other bookmaker accounts instantly from the app." },
-    { icon: <CreditCard className="w-5 h-5" />, title: "Gift Cards", desc: "Purchase and redeem gift cards from Apple, Amazon, Google Play, and more." },
     { icon: <Smartphone className="w-5 h-5" />, title: "Collection Account", desc: "Your personal Paystack-powered collection account for instant top-ups, 24/7." },
   ];
 

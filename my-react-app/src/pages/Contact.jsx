@@ -160,7 +160,7 @@ export default function Contact() {
             {[
               { title: "Balance & Top-Ups", desc: "Issues with your Paystack collection account, top-up failures, balance discrepancies." },
               { title: "Transactions", desc: "Failed airtime, data, TV payments. Wrong number recharges. Betting top-up issues." },
-              { title: "Gift Cards", desc: "Card trading rates, pending trades, card rejection, payment delays." },
+              { title: "Movies & Streaming", desc: "Playback issues, missing titles, downloads, quality and streaming support." },
               { title: "Account & Security", desc: "Password reset, account verification, suspicious activity, data requests." },
             ].map((topic, i) => (
               <motion.div key={i} variants={fadeUp} custom={i} className="rounded-xl p-5 border"

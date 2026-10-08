@@ -8,7 +8,7 @@ import logo from "@/assets/icon.svg";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/ruxx-prepaid", label: "Ruxx Prepaid" },
-  { to: "/ruxx-swap", label: "Ruxx Swap" },
+  { to: "/ruxx-stream", label: "Ruxx Stream" },
   { to: "/blog", label: "Blog" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },

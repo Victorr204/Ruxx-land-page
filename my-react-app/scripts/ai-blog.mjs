@@ -6,7 +6,7 @@
  *
  * Usage:
  *   node scripts/ai-blog.mjs                          # Auto-generate 1 article
- *   node scripts/ai-blog.mjs --topic "gift cards"     # Specific topic
+ *   node scripts/ai-blog.mjs --topic "movie streaming" # Specific topic
  *   node scripts/ai-blog.mjs --count 3                # Generate 3 articles
  *   node scripts/ai-blog.mjs --list-topics            # Show available topics
  *   node scripts/ai-blog.mjs --no-web                 # Skip web scraping

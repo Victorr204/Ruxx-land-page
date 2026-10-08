@@ -51,70 +51,6 @@ As Nigeria continues its digital transformation, utility aggregation apps will p
 Platforms like Ruxx Digital Services are at the forefront of this shift, offering a complete suite of utility top-up services designed specifically for the Nigerian market.`,
   },
   {
-    slug: "best-gift-card-trading-rates-nigeria",
-    title: "Finding the Best Gift Card Trading Rates in Nigeria",
-    excerpt: "A guide to understanding gift card rates, when to sell, and how to get the best value for your gift cards in Nigeria.",
-    date: "2026-09-10",
-    readTime: "4 min read",
-    category: "Gift Cards",
-    image: "/og/blog/best-gift-card-trading-rates-nigeria.png",
-    content: `Gift card trading has become a popular way for Nigerians to convert unused or unwanted gift cards into Naira. Whether you received an Amazon card as a gift or have leftover iTunes credit, understanding how rates work can help you maximize your returns.
-
-## How Gift Card Rates Work
-
-Gift card buy-back rates in Nigeria fluctuate based on several factors:
-
-**Card Brand** — Apple and Amazon gift cards typically command higher rates than less popular brands. Steam cards may have different rates depending on the current demand.
-
-**Denomination** — Higher-value cards often receive slightly better rates. A $100 Amazon card may get a better rate per dollar than a $25 card.
-
-**Market Conditions** — Exchange rates, demand from buyers, and global market trends all influence the rates offered by gift card traders.
-
-**Seasonal Trends** — Rates may increase during festive periods (Christmas, Black Friday) when demand for gift cards is higher.
-
-## Tips for Getting the Best Rates
-
-### 1. Compare Rates Across Platforms
-Different platforms offer different rates. Before selling, check what multiple buyers are offering. Some platforms update their rates daily, so timing matters.
-
-### 2. Sell During Peak Demand
-Holiday seasons and major shopping events like Black Friday and Amazon Prime Day tend to drive up gift card rates. If you can wait, selling during these periods may yield better returns.
-
-### 3. Keep Your Cards in Good Condition
-If you have physical gift cards, ensure they're not damaged or scratched. Digital codes should be unused and verified before attempting to sell.
-
-### 4. Use Reputable Platforms
-Always trade through verified platforms with clear rate disclosures. Avoid informal traders on social media who may offer seemingly better rates but pose security risks.
-
-## Popular Gift Cards in Nigeria
-
-The most commonly traded gift cards in Nigeria include:
-
-- **Amazon Gift Cards** — High demand due to global shopping access
-- **Apple/iTunes Gift Cards** — Popular for App Store purchases and subscriptions
-- **Google Play Gift Cards** — Used for Android app purchases and in-app content
-- **Steam Gift Cards** — Popular among gamers for purchasing games and content
-- **Netflix Gift Cards** — Used for streaming subscriptions
-- **Visa/Mastercard Prepaid Cards** — Versatile cards accepted widely
-
-## Tax Considerations
-
-Gift card trading profits may be subject to tax under Nigerian law. If you trade gift cards regularly as a business, consult with a tax professional to ensure compliance with relevant regulations.
-
-## Getting Started with Gift Card Trading
-
-To start trading gift cards, you'll need a reliable platform that offers competitive rates and fast settlement. Look for platforms that:
-
-- Display real-time rates transparently
-- Credit your balance within minutes
-- Have clear terms and conditions
-- Offer customer support for disputes
-
-One thing worth confirming before you trade: where the proceeds actually land. On Ruxx Swap, sale proceeds are credited to your in-app prepaid balance, which you can then spend on airtime, data, electricity or cable TV. Credits are closed-loop — they cannot be withdrawn to a bank account — so trade only an amount you intend to use for services.
-
-The key is finding a balance between rate competitiveness and transaction security.`,
-  },
-  {
     slug: "how-instant-top-ups-work-nigeria",
     title: "How Instant Top-Ups Work: Funding a Prepaid Balance in Nigeria",
     excerpt: "What a collection account is, why your top-up reflects in seconds, and why prepaid credit can be spent but never withdrawn.",
@@ -140,7 +76,7 @@ Because it is bound to one platform and one purpose, it comes with no card, no c
 
 3. **The notification fires** — Paystack receives the credit, notifies the app, and your prepaid balance is updated within seconds.
 
-4. **You spend it** — Use the balance for airtime, data, electricity tokens, cable TV, or gift cards.
+4. **You spend it** — Use the balance for airtime, data, electricity tokens, cable TV, or movies.
 
 ## Why Top-Ups Reflect in Seconds
 
@@ -171,7 +107,7 @@ This is the part most people get wrong. A balance built up through a collection 
 | Transferable to another user? | **No** | Yes |
 | Earns interest? | No | Sometimes |
 | Backed by | Services you can buy | NDIC insurance / bank capital |
-| Purpose | Airtime, data, electricity, TV, gift cards | Anything |
+| Purpose | Airtime, data, electricity, TV, movies | Anything |
 
 Because money cannot leave the platform, the balance is governed as store credit rather than as a deposit. That is why ruxx prepaid does not hold a banking or Mobile Money Operator licence from the Central Bank of Nigeria: collection and settlement are performed entirely by Paystack under its own CBN-licensed payment service provider permit.
 
@@ -303,7 +239,7 @@ Mobile money services have gained significant traction, particularly in underser
 Companies like Paystack (acquired by Stripe) and Flutterwave provide the infrastructure that powers digital payments for businesses and consumers across Nigeria. They handle the complex backend processing that makes instant transactions possible.
 
 ### Savings and Investment Apps
-A separate group of digital finance companies has emerged around savings, investments and lending. These are distinct from bill payment apps like ruxx prepaid, which only sells airtime, data, electricity tokens, cable TV subscriptions and retail gift cards.
+A separate group of digital finance companies has emerged around savings, investments and lending. These are distinct from bill payment apps like ruxx prepaid, which only sells airtime, data, electricity tokens and cable TV subscriptions.
 
 ### Banks
 Traditional banks are also adapting to the digital shift, launching their own mobile apps and partnering with fintech companies to offer enhanced digital services.
@@ -324,7 +260,7 @@ Digital payment platforms have changed this by:
 
 ## The Role of Bill Payment Platforms
 
-Platforms that aggregate multiple bill payment services play a crucial role in the digital payment ecosystem. By allowing users to pay for airtime, data, TV subscriptions, electricity, and gift cards from a single app, they:
+Platforms that aggregate multiple bill payment services play a crucial role in the digital payment ecosystem. By allowing users to pay for airtime, data, TV subscriptions and electricity from a single app, they:
 
 - Reduce the need for multiple apps and accounts
 - Provide a seamless user experience

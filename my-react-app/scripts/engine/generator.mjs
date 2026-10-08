@@ -30,11 +30,11 @@ const TOPIC_DATABASE = [
     category: "Payments",
   },
   {
-    id: "gift-card-trading",
-    topic: "trade gift cards for Naira at the best rates",
-    keywords: ["gift card", "Apple", "Amazon", "Google Play", "trading"],
-    angle: "How to buy and sell gift cards profitably in Nigeria",
-    category: "Gift Cards",
+    id: "movie-streaming",
+    topic: "stream movies on your phone in Nigeria",
+    keywords: ["streaming", "movies", "Nollywood", "watch online"],
+    angle: "How to stream Nollywood and Hollywood movies in HD on any device",
+    category: "Guides",
   },
   {
     id: "dstv-subscription",

@@ -1,8 +1,8 @@
 # Ruxx Digital Services — Landing Page
 
-Marketing site for Ruxx Digital Services — **Ruxx Prepaid** (utility & bill top-ups: airtime, data, electricity, cable TV) and **Ruxx Swap** (gift-card trading). React 19 + Vite 6 + Tailwind CSS v4 + React Router 7, with an Express + Upstash Redis backend in `server/` and an AI blog pipeline in `scripts/`.
+Marketing site for Ruxx Digital Services — **Ruxx Prepaid** (utility & bill top-ups: airtime, data, electricity, cable TV) and **Ruxx Stream** (movie streaming). React 19 + Vite 6 + Tailwind CSS v4 + React Router 7, with an Express + Upstash Redis backend in `server/` and an AI blog pipeline in `scripts/`.
 
-Positioning: a closed-loop Value-Added Services (VAS) reseller — utility and bill payments (airtime, data, electricity, cable TV) plus retail gift card trading. Prepaid balances are non-withdrawable utility credit; payment collection is handled by Paystack under its CBN licence. Keep titles, meta descriptions and JSON-LD led by the brand name "Ruxx Digital Services" so search engines index the current identity. The legacy routes `/ruxxpay` and `/ruxx-card` redirect to `/ruxx-prepaid` and `/ruxx-swap` so only the canonical URLs are ever indexed.
+Positioning: a closed-loop Value-Added Services (VAS) reseller — utility and bill payments (airtime, data, electricity, cable TV) plus movie streaming. Prepaid balances are non-withdrawable utility credit; payment collection is handled by Paystack under its CBN licence. Keep titles, meta descriptions and JSON-LD led by the brand name "Ruxx Digital Services" so search engines index the current identity. The legacy routes `/ruxxpay`, `/ruxx-swap` and `/ruxx-card` redirect to `/ruxx-prepaid` and `/ruxx-stream` so only the canonical URLs are ever indexed.
 
 ## Getting started
 

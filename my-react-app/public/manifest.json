@@ -1,7 +1,7 @@
 {
   "name": "Ruxx Digital Services — Utility & Bill Payments",
   "short_name": "Ruxx",
-  "description": "Utility and bill payment app — airtime, data, electricity tokens, cable TV top-ups and retail gift card trading.",
+  "description": "Utility and bill payment app — airtime, data, electricity tokens, cable TV top-ups and movie streaming.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

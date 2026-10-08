@@ -27,7 +27,7 @@ export default function Blog() {
             </h1>
             <p className="mt-4 text-muted-foreground max-w-lg mx-auto leading-relaxed">
               Stay informed with practical guides on airtime, data, electricity tokens, cable TV,
-              gift card trading, and staying safe online in Nigeria.
+              movie streaming, and staying safe online in Nigeria.
             </p>
           </motion.div>
         </div>
