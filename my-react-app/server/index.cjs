@@ -194,6 +194,119 @@ app.delete("/api/reviews/:id", requireAdmin, async (req, res) => {
   }
 });
 
+// ─── Trust: live ratings from Google Play, App Store and website reviews ───
+const GOOGLE_PLAY_PACKAGE = cleanEnv(process.env.GOOGLE_PLAY_PACKAGE);
+const APP_STORE_ID = cleanEnv(process.env.APP_STORE_ID);
+const TRUST_CACHE_KEY = "trust:data";
+const TRUST_CACHE_TTL = 6 * 3600; // 6 hours
+
+const STORE_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+
+function round1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+/* Website: average rating + count of ADMIN-APPROVED reviews (real data) */
+async function getWebTrust() {
+  const reviewIds = (await redis.get("review:ids")) || [];
+  let count = 0;
+  let total = 0;
+  for (const id of reviewIds.slice(0, 500)) {
+    const review = await redis.get(`review:${id}`);
+    const rating = review && parseInt(review.rating, 10);
+    if (review && review.approved === 1 && rating >= 1 && rating <= 5) {
+      total += rating;
+      count += 1;
+    }
+  }
+  return {
+    status: count > 0 ? "live" : "no_reviews",
+    rating: count > 0 ? round1(total / count) : null,
+    count,
+    url: null,
+  };
+}
+
+/* Google Play: scraped server-side (no CORS, cached in Redis) */
+async function getPlayStoreTrust() {
+  if (!GOOGLE_PLAY_PACKAGE) return { status: "not_listed", rating: null, count: 0, url: null };
+  const url = `https://play.google.com/store/apps/details?id=${encodeURIComponent(GOOGLE_PLAY_PACKAGE)}&hl=en_US`;
+  try {
+    const res = await fetch(url, {
+      headers: { "user-agent": STORE_UA, "accept-language": "en-US,en;q=0.9" },
+      redirect: "follow",
+    });
+    if (res.status === 404) return { status: "not_listed", rating: null, count: 0, url };
+    if (!res.ok) return { status: "unknown", rating: null, count: 0, url };
+
+    const html = await res.text();
+    const value = html.match(/"ratingValue"\s*:\s*"([\d.]+)"/);
+    const count = html.match(/"ratingCount"\s*:\s*"(\d+)"/);
+
+    if (!value && !count) {
+      // Page exists but has no aggregate rating block → app not (yet) published
+      if (/Sorry, the requested URL was not found|<title>Not Found/i.test(html)) {
+        return { status: "not_listed", rating: null, count: 0, url };
+      }
+      return { status: "live", rating: null, count: 0, url };
+    }
+    return {
+      status: "live",
+      rating: value ? round1(parseFloat(value[1])) : null,
+      count: count ? parseInt(count[1], 10) : 0,
+      url,
+    };
+  } catch (err) {
+    console.error("trust: google play fetch failed:", err.message);
+    return { status: "unknown", rating: null, count: 0, url };
+  }
+}
+
+/* App Store: official iTunes Lookup API (public, no key needed) */
+async function getAppStoreTrust() {
+  if (!APP_STORE_ID) return { status: "not_listed", rating: null, count: 0, url: null };
+  const url = `https://itunes.apple.com/lookup?id=${encodeURIComponent(APP_STORE_ID)}&country=ng`;
+  try {
+    const res = await fetch(url, { headers: { "user-agent": STORE_UA } });
+    if (!res.ok) return { status: "unknown", rating: null, count: 0, url: null };
+    const data = await res.json();
+    const app = data && data.results && data.results[0];
+    if (!app) return { status: "not_listed", rating: null, count: 0, url: null };
+    return {
+      status: "live",
+      rating: typeof app.averageUserRating === "number" ? round1(app.averageUserRating) : null,
+      count: app.userRatingCount || 0,
+      url: app.trackViewUrl || null,
+    };
+  } catch (err) {
+    console.error("trust: app store lookup failed:", err.message);
+    return { status: "unknown", rating: null, count: 0, url: null };
+  }
+}
+
+app.get("/api/trust", async (req, res) => {
+  try {
+    const cached = await redis.get(TRUST_CACHE_KEY);
+    if (cached) {
+      const parsed = typeof cached === "string" ? JSON.parse(cached) : cached;
+      if (parsed && parsed.web) return res.json({ ...parsed, cached: true });
+    }
+
+    const [web, playStore, appStore] = await Promise.all([
+      getWebTrust(),
+      getPlayStoreTrust(),
+      getAppStoreTrust(),
+    ]);
+
+    const payload = { web, playStore, appStore, fetchedAt: new Date().toISOString() };
+    await redis.set(TRUST_CACHE_KEY, JSON.stringify(payload), { ex: TRUST_CACHE_TTL });
+    res.json(payload);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Health check
 app.get("/api/health", async (req, res) => {
   try {

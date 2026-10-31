@@ -9,6 +9,8 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import { ComingSoonProvider } from "@/components/ComingSoon";
 import AdPopup from "@/components/AdPopup";
+import FundraiserPopup from "@/components/FundraiserPopup";
+import FundraiserBanner from "@/components/FundraiserBanner";
 
 const Home = lazy(() => import("@/pages/Home"));
 const RuxxPrepaid = lazy(() => import("@/pages/RuxxPrepaid"));
@@ -38,11 +40,12 @@ export default function App() {
       <div className="min-h-screen flex flex-col" style={{ background: "var(--background)", color: "var(--foreground)" }}>
         <ScrollToTop />
         <SEO path={location.pathname} />
+        <FundraiserBanner />
         <Navbar />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg">
           Skip to content
         </a>
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="flex-1" style={{ paddingTop: "var(--site-banner-space, 0px)" }}>
           <ErrorBoundary>
             <Suspense fallback={<PageLoader />}>
               <AnimatePresence mode="wait">
@@ -70,6 +73,7 @@ export default function App() {
         </main>
         <Footer />
         <CookieConsent />
+        <FundraiserPopup />
         <AdPopup />
       </div>
     </ComingSoonProvider>

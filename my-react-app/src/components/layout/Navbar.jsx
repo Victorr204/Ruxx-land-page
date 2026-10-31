@@ -40,7 +40,8 @@ export default function Navbar() {
       <header
         className="fixed z-50 transition-all duration-300"
         style={{
-          top: "1rem",
+          /* --site-banner-offset is set by <FundraiserBanner />; falls back to 1rem when the bar is dismissed */
+          top: "var(--site-banner-offset, 1rem)",
           left: "1rem",
           right: "1rem",
           maxWidth: "80rem",
@@ -137,7 +138,7 @@ export default function Navbar() {
             id="mobile-menu"
             className="fixed z-40 lg:hidden"
             style={{
-              top: "5.25rem",
+              top: "calc(var(--site-banner-offset, 1rem) + 4.25rem)",
               left: "1rem",
               right: "1rem",
               backgroundColor: "var(--card)",

@@ -62,8 +62,8 @@ export default function About() {
                   subscriptions, electricity bills, betting facilitation, and movie streaming.
                 </p>
                 <p>
-                  Today, Ruxx Digital Services powers thousands of top-ups daily,
-                  serving users who demand speed, reliability, and transparency. We are a
+                  Ruxx Digital Services is built to power top-ups at scale from day one,
+                  for users who demand speed, reliability, and transparency. We are a
                   value-added services reseller, not a bank — money in only ever buys
                   services inside the platform.
                 </p>
@@ -72,7 +72,7 @@ export default function About() {
             <motion.div variants={fadeUp} custom={1} className="grid grid-cols-2 gap-3">
               {[
                 { end: stats.users, suffix: "+", label: "Users" },
-                { end: 10, suffix: "K+", label: "Transactions" },
+                { end: 6, suffix: "", label: "Services Offered" },
                 { end: 99, suffix: ".9%", label: "Uptime" },
                 { end: 24, suffix: "/7", label: "Support" },
               ].map((stat, i) => (
@@ -107,9 +107,9 @@ export default function About() {
                 in one mobile-first app.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Under his leadership, Ruxx has grown into a trusted platform serving thousands
-                of users daily for airtime, data, TV subscriptions, electricity bills, and
-                movie streaming.
+                Under his leadership, Ruxx has been built into a complete platform covering
+                airtime, data, TV subscriptions, electricity bills, and movie streaming —
+                opening to the public with its first users at launch.
               </p>
             </motion.div>
           </div>

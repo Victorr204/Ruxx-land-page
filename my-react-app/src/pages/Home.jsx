@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import {
   Smartphone, Film, ShieldCheck, Zap, BadgeDollarSign,
   Headphones, ArrowRight, ChevronDown, Wifi, Tv, Bolt,
-  CheckCircle2, Star, Users, TrendingUp, Globe,
+  CheckCircle2, Users, TrendingUp, Globe,
 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Reviews from "@/components/Reviews";
+import TrustRatings, { HeroTrustBadge } from "@/components/TrustRatings";
 import paystackLogo from "@/assets/images/paystack.png";
 import paystackSvg from "@/assets/images/paystack-logo.svg";
 
@@ -27,7 +28,7 @@ const faqs = [
   { q: "What is Ruxx Digital Services?", a: "Ruxx Digital Services is a utility aggregation and value-added services platform built for Nigerians. We offer two core products — Ruxx Prepaid for airtime, data, electricity and cable TV top-ups, and Ruxx Stream for streaming movies." },
   { q: "Is Ruxx Prepaid a bank or wallet app?", a: "No. ruxx prepaid is not a bank, Mobile Money Operator, or deposit-taking institution. It is a closed-loop utility credit platform: balances can be spent inside the app but cannot be withdrawn or transferred out. Payments are collected by Paystack under its CBN-licensed gateway." },
   { q: "What fees does Ruxx charge?", a: "Ruxx Prepaid charges a flat 1.5% on balance top-ups. Ruxx Stream is included with your account. No hidden charges on either platform." },
-  { q: "How do I get started?", a: "Download the app from Google Play or App Store, create an account, and top up your prepaid balance. You can start using any of our services immediately." },
+  { q: "How do I get started?", a: "Ruxx Prepaid is launching on Google Play and the App Store very soon. Create your account now and top up your prepaid balance the moment the app goes live — every service will be available immediately after." },
   { q: "How do I contact support?", a: "Reach us 24/7 via email at info@ruxxdigital.name.ng or through our in-app support chat." },
 ];
 
@@ -132,12 +133,13 @@ export default function Home() {
               {[
                 { icon: <ShieldCheck style={{ width: "14px", height: "14px" }} />, text: "PCI-DSS Secure" },
                 { icon: <CheckCircle2 style={{ width: "14px", height: "14px" }} />, text: "Instant Delivery" },
-                { icon: <Star style={{ width: "14px", height: "14px" }} />, text: "Trusted by 1,000+ Users" },
               ].map((b, i) => (
                 <div key={i} className="flex items-center text-[12px] text-muted-foreground" style={{ gap: "0.375rem" }}>
                   <span style={{ color: "var(--primary)" }}>{b.icon}</span> {b.text}
                 </div>
               ))}
+              {/* Live ratings from Google Play · App Store · site reviews (real data, no hard-coded numbers) */}
+              <HeroTrustBadge />
             </motion.div>
           </div>
         </div>
@@ -434,9 +436,15 @@ export default function Home() {
               <span className="text-[10px] font-semibold tracking-wider uppercase" style={{ color: "var(--gold)" }}>What Users Say</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-foreground" style={{ letterSpacing: "-0.025em" }}>
-              Loved by <span className="gradient-text">thousands.</span>
+              Reviews from <span className="gradient-text">real users.</span>
             </h2>
+            <p className="mt-3 text-sm" style={{ color: "var(--muted-foreground)" }}>
+              Live ratings from Google Play, the App Store and this site — updated automatically, never hand-written.
+            </p>
           </motion.div>
+
+          {/* Live, source-linked ratings (Google Play · App Store · website) */}
+          <TrustRatings />
 
           <Reviews />
         </div>
@@ -498,7 +506,7 @@ export default function Home() {
               <span className="gradient-text">paying smarter?</span>
             </h2>
             <p className="mt-4 max-w-md mx-auto" style={{ color: "var(--muted-foreground)", position: "relative" }}>
-              Join thousands of Nigerians already using Ruxx Digital Services.
+              Ruxx Prepaid launches soon — be among the first Nigerians to pay smarter.
             </p>
             <div className="flex flex-wrap justify-center" style={{ gap: "0.75rem", marginTop: "2rem", position: "relative" }}>
               <Link

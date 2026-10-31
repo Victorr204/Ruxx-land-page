@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { FUNDRAISER_POPUP_DONE_EVENT, isFundraiserPopupPending } from "@/lib/popupQueue";
 
 const AD_SRC = "/advert-banner.png";
 const DISMISS_KEY = "ruxx-ad-popup-dismissed";
@@ -28,24 +29,37 @@ export default function AdPopup() {
     if (isDismissed()) return undefined;
 
     let cancelled = false;
+    let fallback;
     let timer;
     const show = () => {
       if (!cancelled) setOpen(true);
     };
 
-    // Show once the banner is ready, but never wait longer than 2.5s
-    const fallback = setTimeout(show, 2500);
-    const img = new Image();
-    img.onload = () => {
-      clearTimeout(fallback);
-      timer = setTimeout(show, 400);
+    /* Show once the banner is ready, but never wait longer than 2.5s */
+    const arm = () => {
+      fallback = setTimeout(show, 2500);
+      const img = new Image();
+      img.onload = () => {
+        clearTimeout(fallback);
+        timer = setTimeout(show, 400);
+      };
+      img.src = AD_SRC;
     };
-    img.src = AD_SRC;
+
+    /* The fundraiser popup has priority — only arm once it's been closed */
+    const onFundraiserDone = () => arm();
+
+    if (isFundraiserPopupPending()) {
+      window.addEventListener(FUNDRAISER_POPUP_DONE_EVENT, onFundraiserDone, { once: true });
+    } else {
+      arm();
+    }
 
     return () => {
       cancelled = true;
       clearTimeout(fallback);
       clearTimeout(timer);
+      window.removeEventListener(FUNDRAISER_POPUP_DONE_EVENT, onFundraiserDone);
     };
   }, []);
 
